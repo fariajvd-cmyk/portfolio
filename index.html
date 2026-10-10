@@ -1,0 +1,2059 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engr. Faria | Biomedical Engineer & AI Healthcare Innovator</title>
+    <meta name="description" content="Portfolio of Engr. Faria - Biomedical Engineer specializing in AI in Healthcare, Bio-Signal Processing, Medical Imaging, Embedded Bio-Mechatronics & MIMIC-III Clinical Research.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: { 950: '#070b14', 900: '#0f172a', 800: '#1e293b', 700: '#334155' },
+                        cyan: { 400: '#22d3ee', 500: '#06b6d4', 600: '#0891b2' },
+                        emerald: { 400: '#34d399', 500: '#10b981', 600: '#059669' },
+                        violet: { 400: '#c084fc', 500: '#a855f7', 600: '#9333ea' }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Master CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="bg-navy-950 text-slate-200 antialiased selection:bg-cyan-500 selection:text-navy-950 relative min-h-screen">
+
+    <!-- Particle Background Canvas -->
+    <canvas id="particles-bg" class="fixed top-0 left-0 w-full h-full z-0 pointer-events-none opacity-45"></canvas>
+
+    <!-- Sticky Navigation Bar -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 px-4 md:px-8 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center backdrop-blur-xl bg-navy-900/70 border border-white/10 rounded-2xl px-6 py-3 shadow-2xl nav-glow">
+            <!-- Brand Logo -->
+            <a href="#home" class="flex items-center gap-2 group">
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-emerald-500 flex items-center justify-center text-navy-950 font-bold font-mono text-lg shadow-lg group-hover:scale-105 transition-transform">
+                    FB
+                </div>
+                <span class="text-xl font-bold font-mono tracking-tight text-white">
+                    Engr.<span class="text-cyan-400">Faria</span><span class="text-emerald-400">.</span>
+                </span>
+            </a>
+
+            <!-- Desktop Links -->
+            <div class="hidden lg:flex items-center space-x-6 text-sm font-semibold text-slate-300">
+                <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
+                <a href="#education" class="hover:text-cyan-400 transition-colors">Education</a>
+                <a href="#skills" class="hover:text-cyan-400 transition-colors">Skills</a>
+                <a href="#experience" class="hover:text-cyan-400 transition-colors">Experience</a>
+                <a href="#projects" class="hover:text-cyan-400 transition-colors">Projects</a>
+                <a href="#publications" class="hover:text-cyan-400 transition-colors flex items-center gap-1.5"><span class="px-1.5 py-0.5 rounded text-[10px] bg-cyan-500/20 text-cyan-400 font-mono font-bold">New</span> Publications</a>
+                <a href="#lab-simulator" class="hover:text-emerald-400 transition-colors flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Bio-Lab
+                </a>
+                <a href="#achievements" class="hover:text-cyan-400 transition-colors">Honors</a>
+                <a href="#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
+            </div>
+
+            <!-- Header Action Button -->
+            <div class="hidden lg:flex items-center gap-3">
+                <button id="open-cv-modal" class="px-4 py-2 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 text-xs font-mono font-semibold transition-all flex items-center gap-2 hover:scale-105">
+                    <i class="fas fa-file-invoice"></i> Digital CV
+                </button>
+            </div>
+
+            <!-- Mobile Menu Hamburger -->
+            <button class="lg:hidden text-white hover:text-cyan-400 transition-colors p-2" id="mobile-menu-btn" aria-label="Toggle Navigation">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden mt-3 bg-navy-900/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-5 flex flex-col space-y-4 text-center max-w-7xl mx-auto shadow-2xl">
+            <a href="#about" class="hover:text-cyan-400 transition-colors mobile-link py-1">About</a>
+            <a href="#education" class="hover:text-cyan-400 transition-colors mobile-link py-1">Education</a>
+            <a href="#skills" class="hover:text-cyan-400 transition-colors mobile-link py-1">Skills</a>
+            <a href="#experience" class="hover:text-cyan-400 transition-colors mobile-link py-1">Experience</a>
+            <a href="#projects" class="hover:text-cyan-400 transition-colors mobile-link py-1">Projects</a>
+            <a href="#publications" class="hover:text-cyan-400 transition-colors mobile-link py-1 flex items-center justify-center gap-1.5"><span class="px-1.5 py-0.5 rounded text-[10px] bg-cyan-500/20 text-cyan-400 font-mono font-bold">New</span> Publications</a>
+            <a href="#lab-simulator" class="hover:text-emerald-400 transition-colors mobile-link py-1">Bio-Lab Simulator</a>
+            <a href="#achievements" class="hover:text-cyan-400 transition-colors mobile-link py-1">Honors & Awards</a>
+            <a href="#contact" class="hover:text-cyan-400 transition-colors mobile-link py-1">Contact</a>
+            <button onclick="document.getElementById('open-cv-modal').click()" class="w-full py-2.5 rounded-xl bg-cyan-500/20 text-cyan-400 border border-cyan-500/40 text-sm font-semibold font-mono">
+                View Complete Digital CV
+            </button>
+        </div>
+    </nav>
+
+    <main class="relative z-10">
+
+        <!-- ================= HERO SECTION ================= -->
+        <section id="home" class="min-h-screen flex items-center justify-center relative pt-28 pb-16 overflow-hidden px-4 md:px-8">
+            <!-- ECG Wave SVG Background Animation -->
+            <div class="absolute inset-0 pointer-events-none flex items-center justify-center opacity-15 z-0">
+                <svg class="w-full h-96" viewBox="0 0 1000 200" preserveAspectRatio="none">
+                    <path class="ecg-anim-path" d="M0,100 L200,100 L250,100 L270,30 L300,170 L340,100 L400,100 L500,100 L550,100 L570,30 L600,170 L640,100 L1000,100" fill="none" stroke="#10b981" stroke-width="2.5" vector-effect="non-scaling-stroke"></path>
+                </svg>
+            </div>
+
+            <!-- Floating Biomedical Icons -->
+            <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+                <div class="floating-element absolute top-1/4 left-10 text-cyan-400 opacity-40 text-4xl blur-[0.5px]"><i class="fas fa-dna"></i></div>
+                <div class="floating-element-delayed absolute top-1/3 right-16 text-emerald-400 opacity-40 text-4xl blur-[0.5px]"><i class="fas fa-network-wired"></i></div>
+                <div class="floating-element absolute bottom-1/4 left-1/4 text-violet-400 opacity-30 text-5xl blur-[1px]"><i class="fas fa-brain"></i></div>
+                <div class="floating-element-delayed absolute bottom-1/3 right-1/4 text-cyan-300 opacity-35 text-3xl"><i class="fas fa-microchip"></i></div>
+            </div>
+
+            <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center relative z-10">
+                <!-- Left Hero Text -->
+                <div class="lg:col-span-7 text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 font-mono text-xs font-semibold mb-6">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        Lecturer & Biomedical Research Scholar
+                    </div>
+
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-tight mb-4">
+                        Engr. <span class="text-gradient">Faria</span>
+                    </h1>
+
+                    <h2 class="text-lg md:text-2xl font-medium text-slate-300 mb-6 flex flex-wrap gap-2 items-center">
+                        <span class="text-cyan-400 font-semibold">Biomedical Engineer</span>
+                        <span class="text-slate-600">•</span>
+                        <span class="text-emerald-400 font-semibold">AI in Healthcare</span>
+                        <span class="text-slate-600">•</span>
+                        <span class="text-violet-400 font-semibold">Signal Processing</span>
+                    </h2>
+
+                    <p class="text-slate-400 text-base md:text-lg leading-relaxed mb-8 max-w-2xl border-l-2 border-cyan-500/60 pl-4 py-1 bg-white/[0.02] rounded-r-xl">
+                        Dedicated to bridging cutting-edge Artificial Intelligence, physiological signal conditioning (ECG, PPG, EEG, EMG), and medical imaging with real-world clinical application to revolutionize patient monitoring and bio-mechatronic rehabilitation.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4 items-center">
+                        <a href="#publications" class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 text-navy-950 font-bold text-sm tracking-wide transition-all shadow-[0_0_20px_rgba(6,182,212,0.4)] hover:shadow-[0_0_30px_rgba(6,182,212,0.7)] hover:scale-105 flex items-center gap-2">
+                            <i class="fas fa-book-open"></i> Publications
+                        </a>
+
+                        <a href="#projects" class="px-7 py-3.5 rounded-xl bg-navy-800/80 hover:bg-navy-800 text-cyan-400 border border-cyan-500/30 font-semibold text-sm transition-all hover:scale-105 flex items-center gap-2">
+                            <i class="fas fa-flask text-emerald-400"></i> Explore Research
+                        </a>
+
+                        <button onclick="document.getElementById('open-cv-modal').click()" class="px-5 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 text-sm font-mono font-medium transition-all hover:text-white flex items-center gap-2">
+                            <i class="fas fa-file-pdf text-rose-400"></i> CV Details
+                        </button>
+                    </div>
+
+                    <!-- Quick Highlights Badges -->
+                    <div class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-white/10">
+                        <a href="#publications" class="block hover:opacity-85 transition-all group">
+                            <div class="text-2xl font-bold font-mono text-cyan-400 group-hover:scale-105 transition-transform origin-left">2</div>
+                            <div class="text-xs text-slate-400 font-medium group-hover:text-cyan-300 transition-colors">Research Papers</div>
+                        </a>
+                        <a href="#achievements" class="block hover:opacity-85 transition-all group">
+                            <div class="text-2xl font-bold font-mono text-emerald-400 group-hover:scale-105 transition-transform origin-left">MIMIC-III</div>
+                            <div class="text-xs text-slate-400 font-medium group-hover:text-emerald-300 transition-colors">CITI Credentialed</div>
+                        </a>
+                        <a href="#projects" class="block hover:opacity-85 transition-all group">
+                            <div class="text-2xl font-bold font-mono text-violet-400 group-hover:scale-105 transition-transform origin-left">10+</div>
+                            <div class="text-xs text-slate-400 font-medium group-hover:text-violet-300 transition-colors">Research Projects</div>
+                        </a>
+                        <a href="#achievements" class="block hover:opacity-85 transition-all group">
+                            <div class="text-2xl font-bold font-mono text-amber-400 group-hover:scale-105 transition-transform origin-left">2nd Pos</div>
+                            <div class="text-xs text-slate-400 font-medium group-hover:text-amber-300 transition-colors">UTM Poster Award</div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Hero Mini Bio-Signal Simulator Widget -->
+                <div class="lg:col-span-5">
+                    <div class="glass-panel rounded-3xl p-6 relative overflow-hidden group border-white/15 shadow-2xl">
+                        <!-- Top Header of Widget -->
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="flex items-center gap-2.5">
+                                <span class="w-3 h-3 rounded-full bg-emerald-400 animate-pulse-glow"></span>
+                                <h3 class="text-sm font-mono font-bold text-white tracking-wide">Live Bio-Signal Simulator</h3>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-md bg-emerald-500/20 text-emerald-400 font-mono text-xs font-bold border border-emerald-500/30" id="hero-signal-badge">
+                                ECG • 75 BPM
+                            </span>
+                        </div>
+
+                        <!-- Canvas Box -->
+                        <div class="relative w-full h-52 bg-navy-950/80 rounded-2xl border border-white/10 overflow-hidden shadow-inner flex items-center justify-center bio-grid-pattern">
+                            <canvas id="biosignal-canvas" class="w-full h-full"></canvas>
+                        </div>
+
+                        <!-- Mini Controls -->
+                        <div class="mt-4 grid grid-cols-4 gap-2">
+                            <button onclick="if(window.heroSim){window.heroSim.setSignalType('ECG'); document.getElementById('hero-signal-badge').textContent='ECG • 75 BPM';}" class="py-1.5 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-mono font-semibold transition-all">ECG</button>
+                            <button onclick="if(window.heroSim){window.heroSim.setSignalType('PPG'); document.getElementById('hero-signal-badge').textContent='PPG • SpO2 Glucose';}" class="py-1.5 rounded-lg bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 text-xs font-mono font-semibold transition-all">PPG</button>
+                            <button onclick="if(window.heroSim){window.heroSim.setSignalType('EEG'); document.getElementById('hero-signal-badge').textContent='EEG • BCI Alpha';}" class="py-1.5 rounded-lg bg-violet-500/10 hover:bg-violet-500/20 text-violet-400 border border-violet-500/30 text-xs font-mono font-semibold transition-all">EEG</button>
+                            <button onclick="if(window.heroSim){window.heroSim.setSignalType('EMG'); document.getElementById('hero-signal-badge').textContent='EMG • Muscle Tone';}" class="py-1.5 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 text-amber-400 border border-amber-500/30 text-xs font-mono font-semibold transition-all">EMG</button>
+                        </div>
+
+                        <p class="text-xs text-slate-400 mt-3 text-center font-mono">
+                            <i class="fas fa-info-circle text-cyan-400 mr-1"></i> Interactive bio-signal modeling real-time physiological signals.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= ABOUT SECTION ================= -->
+        <section id="about" class="py-20 px-4 md:px-8 relative border-t border-white/5">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="text-cyan-400 font-mono text-xs font-semibold tracking-widest uppercase mb-2 block">Professional Summary</span>
+                    <h2 class="text-3xl md:text-5xl font-extrabold text-white">About Engr. Faria</h2>
+                    <div class="w-16 h-1 bg-gradient-to-r from-cyan-500 to-emerald-500 mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="grid lg:grid-cols-12 gap-8 items-stretch">
+                    <!-- Bio Narrative -->
+                    <div class="lg:col-span-7 glass-panel rounded-3xl p-8 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+                                <i class="fas fa-user-md text-cyan-400"></i> Biomedical Engineer & Educator
+                            </h3>
+                            <p class="text-slate-300 leading-relaxed mb-6 text-base">
+                                I am a Biomedical Engineer with strong expertise in AI-driven healthcare systems, biomedical signal processing, and medical imaging. My career mission is to develop clinically relevant, scalable, and impactful healthcare solutions that directly improve diagnostic precision and patient outcomes.
+                            </p>
+                            <p class="text-slate-300 leading-relaxed mb-6 text-base">
+                                Skilled in conducting rigorous research using clinical datasets (such as MIMIC-III) and physiological signals (ECG, PPG, EEG, EMG), I hold full CITI Program ethical compliance certification. As a Lecturer at Superior University and former Lab Engineer at Riphah International University, I actively mentor future engineers in mechatronic telesurgery, brain-computer interfaces, and smart radiation monitoring.
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4 pt-6 border-t border-white/10">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
+                                    <i class="fas fa-university"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-slate-400">Current Role</div>
+                                    <div class="text-sm font-semibold text-white">Lecturer @ Superior Univ</div>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-slate-400">Highest Degree</div>
+                                    <div class="text-sm font-semibold text-white">MS Biomedical Eng (Riphah)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Core Pillars / Research Domains -->
+                    <div class="lg:col-span-5 space-y-4">
+                        <div class="glass-panel glass-panel-hover rounded-2xl p-5 border-l-4 border-l-cyan-400">
+                            <div class="flex items-start gap-4">
+                                <div class="w-11 h-11 rounded-xl bg-cyan-500/15 text-cyan-400 flex items-center justify-center text-xl flex-shrink-0">
+                                    <i class="fas fa-heart-pulse"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-base font-bold text-white mb-1">AI & Bio-Signal Processing</h4>
+                                    <p class="text-xs text-slate-400 leading-relaxed">
+                                        Cardiovascular disease prediction via continuous PPG blood glucose modeling & PhysioNet ECG classification algorithms.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="glass-panel glass-panel-hover rounded-2xl p-5 border-l-4 border-l-emerald-400">
+                            <div class="flex items-start gap-4">
+                                <div class="w-11 h-11 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center text-xl flex-shrink-0">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-base font-bold text-white mb-1">EEG-BCI & Medical Imaging</h4>
+                                    <p class="text-xs text-slate-400 leading-relaxed">
+                                        ADS1299 motor imagery Brain-Computer Interface decoding and CNN-based MRI brain tumor localization (82.57% accuracy).
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="glass-panel glass-panel-hover rounded-2xl p-5 border-l-4 border-l-violet-400">
+                            <div class="flex items-start gap-4">
+                                <div class="w-11 h-11 rounded-xl bg-violet-500/15 text-violet-400 flex items-center justify-center text-xl flex-shrink-0">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-base font-bold text-white mb-1">Bio-Mechatronics & Telesurgery</h4>
+                                    <p class="text-xs text-slate-400 leading-relaxed">
+                                        Sub-200ms master-slave robotic tele-surgery frameworks (<$500 cost) and BPW34 PIN photodiode radiation monitoring devices.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="glass-panel glass-panel-hover rounded-2xl p-5 border-l-4 border-l-amber-400">
+                            <div class="flex items-start gap-4">
+                                <div class="w-11 h-11 rounded-xl bg-amber-500/15 text-amber-400 flex items-center justify-center text-xl flex-shrink-0">
+                                    <i class="fas fa-vial"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-base font-bold text-white mb-1">Biomaterials & Hydrogels</h4>
+                                    <p class="text-xs text-slate-400 leading-relaxed">
+                                        Smart alginate biopolymer synthesis for temperature-responsive (37°C) controlled drug delivery kinetics.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= EDUCATION SECTION ================= -->
+        <section id="education" class="py-20 px-4 md:px-8 relative bg-navy-900/30">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="text-emerald-400 font-mono text-xs font-semibold tracking-widest uppercase mb-2 block">Academic Excellence</span>
+                    <h2 class="text-3xl md:text-5xl font-extrabold text-white">Education & Training</h2>
+                    <div class="w-16 h-1 bg-gradient-to-r from-emerald-500 to-cyan-500 mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Master's Degree -->
+                    <div class="glass-panel glass-panel-hover rounded-3xl p-8 border-t-4 border-t-cyan-400 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 font-mono text-xs font-bold border border-cyan-500/30">
+                                    10/2022 – 03/2025
+                                </span>
+                                <i class="fas fa-graduation-cap text-3xl text-cyan-400/40"></i>
+                            </div>
+
+                            <h3 class="text-2xl font-bold text-white mb-2">Master in Biomedical Engineering</h3>
+                            <h4 class="text-cyan-400 font-medium text-base mb-4 flex items-center gap-2">
+                                <i class="fas fa-university"></i> Riphah International University, Lahore Campus
+                            </h4>
+
+                            <p class="text-slate-300 text-sm mb-6 leading-relaxed">
+                                Specialized in advanced signal conditioning algorithms, machine learning model architectures for clinical decision support, and physiological control systems.
+                            </p>
+
+                            <div class="mb-6">
+                                <h5 class="text-xs font-mono font-semibold text-slate-400 uppercase tracking-wider mb-3">Key Specialized Coursework:</h5>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="badge-tech">Advance Biomedical Signal Processing</span>
+                                    <span class="badge-tech">Advance Biomedical Imaging Processing</span>
+                                    <span class="badge-tech">Machine Learning & Deep Learning</span>
+                                    <span class="badge-tech">Advance Biomedical Control System</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-3">
+                            <a href="https://riphah.edu.pk/lahore" target="_blank" class="inline-flex items-center text-xs font-mono font-semibold text-cyan-400 hover:text-cyan-300 transition-colors">
+                                Institutional Portal <i class="fas fa-arrow-right ml-1.5 text-[10px]"></i>
+                            </a>
+                            <button onclick="openCertificateLightbox('certificates/Master Degree and certificate/Master_Degree_and_HEC_Attestation_page_4.png', 'Master of Science in Biomedical Engineering Degree & HEC Attestation Certificate', 'certificates/Master Degree and certificate/Master_Degree_and_HEC_Attestation.pdf')" class="px-3.5 py-1.5 rounded-xl bg-cyan-500/15 hover:bg-cyan-500/25 text-cyan-300 border border-cyan-500/30 text-xs font-mono font-semibold transition-all inline-flex items-center gap-1.5 hover:scale-105">
+                                <i class="fas fa-certificate text-cyan-400"></i> View Degree Certificate
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Bachelor's Degree -->
+                    <div class="glass-panel glass-panel-hover rounded-3xl p-8 border-t-4 border-t-emerald-400 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 font-mono text-xs font-bold border border-emerald-500/30">
+                                    09/2017 – 05/2021
+                                </span>
+                                <i class="fas fa-award text-3xl text-emerald-400/40"></i>
+                            </div>
+
+                            <h3 class="text-2xl font-bold text-white mb-2">Bachelors in Biomedical Engineering</h3>
+                            <h4 class="text-emerald-400 font-medium text-base mb-4 flex items-center gap-2">
+                                <i class="fas fa-university"></i> University of Engineering & Technology (UET), Lahore Campus
+                            </h4>
+
+                            <p class="text-slate-300 text-sm mb-6 leading-relaxed">
+                                Foundation in medical instrumentation, physiological modeling, neural networks, and cell molecular biology. Award-winning poster research at international conferences.
+                            </p>
+
+                            <div class="mb-6">
+                                <h5 class="text-xs font-mono font-semibold text-slate-400 uppercase tracking-wider mb-3">Key Core Coursework:</h5>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="badge-tech badge-emerald">Biomedical Imaging</span>
+                                    <span class="badge-tech badge-emerald">Modelling of Physiological Processes</span>
+                                    <span class="badge-tech badge-emerald">Biomedical Instrumentation</span>
+                                    <span class="badge-tech badge-emerald">Neuroscience & Neural Networks</span>
+                                    <span class="badge-tech badge-emerald">Cell & Molecular Biology</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-3">
+                            <a href="https://www.uet.edu.pk" target="_blank" class="inline-flex items-center text-xs font-mono font-semibold text-emerald-400 hover:text-emerald-300 transition-colors">
+                                Institutional Portal <i class="fas fa-arrow-right ml-1.5 text-[10px]"></i>
+                            </a>
+                            <button onclick="openCertificateLightbox('certificates/2nd Position International Poster Award/Healthcare Technologies Certificate.png', '2nd Position International Poster Award in Healthcare Technologies — Universiti Teknologi Malaysia (UTM)', 'certificates/2nd Position International Poster Award/Healthcare Technologies Certificate.pdf')" class="px-3.5 py-1.5 rounded-xl bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-300 border border-emerald-500/30 text-xs font-mono font-semibold transition-all inline-flex items-center gap-1.5 hover:scale-105">
+                                <i class="fas fa-trophy text-amber-400"></i> View Poster Award
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= SKILLS SECTION ================= -->
+        <section id="skills" class="py-20 px-4 md:px-8 relative">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="text-violet-400 font-mono text-xs font-semibold tracking-widest uppercase mb-2 block">Technical Stack</span>
+                    <h2 class="text-3xl md:text-5xl font-extrabold text-white">Skills & Competencies</h2>
+                    <div class="w-16 h-1 bg-gradient-to-r from-violet-500 to-cyan-500 mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <!-- Column 1: Software & Simulation Tools -->
+                    <div class="glass-panel rounded-3xl p-6">
+                        <div class="flex items-center gap-3 mb-6 pb-4 border-b border-white/10">
+                            <div class="w-10 h-10 rounded-xl bg-cyan-500/15 text-cyan-400 flex items-center justify-center text-lg">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-white">Simulation & Software</h3>
+                                <div class="text-xs text-slate-400">Engineering Platforms</div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between text-xs font-mono mb-1">
+                                    <span class="text-white font-semibold">MATLAB & Bio-Signal Toolbox</span>
+                                    <span class="text-cyan-400">95%</span>
+                                </div>
+                                <div class="w-full h-2 bg-navy-950 rounded-full overflow-hidden border border-white/5">
+                                    <div class="h-full bg-gradient-to-r from-cyan-500 to-emerald-400 rounded-full" style="width: 95%;"></div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between text-xs font-mono mb-1">
+                                    <span class="text-white font-semibold">Python (ML / PyTorch / OpenCV)</span>
+                                    <span class="text-cyan-400">90%</span>
+                                </div>
+                                <div class="w-full h-2 bg-navy-950 rounded-full overflow-hidden border border-white/5">
+                                    <div class="h-full bg-gradient-to-r from-cyan-500 to-emerald-400 rounded-full" style="width: 90%;"></div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between text-xs font-mono mb-1">
+                                    <span class="text-white font-semibold">COMSOL Multiphysics</span>
+                                    <span class="text-cyan-400">85%</span>
+                                </div>
+                                <div class="w-full h-2 bg-navy-950 rounded-full overflow-hidden border border-white/5">
+                                    <div class="h-full bg-gradient-to-r from-cyan-500 to-emerald-400 rounded-full" style="width: 85%;"></div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between text-xs font-mono mb-1">
+                                    <span class="text-white font-semibold">Proteus & Multisim</span>
+                                    <span class="text-cyan-400">88%</span>
+                                </div>
+                                <div class="w-full h-2 bg-navy-950 rounded-full overflow-hidden border border-white/5">
+                                    <div class="h-full bg-gradient-to-r from-cyan-500 to-emerald-400 rounded-full" style="width: 88%;"></div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between text-xs font-mono mb-1">
+                                    <span class="text-white font-semibold">LabVIEW & Dev C++</span>
+                                    <span class="text-cyan-400">82%</span>
+                                </div>
+                                <div class="w-full h-2 bg-navy-950 rounded-full overflow-hidden border border-white/5">
+                                    <div class="h-full bg-gradient-to-r from-cyan-500 to-emerald-400 rounded-full" style="width: 82%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 2: Hardware & Clinical Signal Domains -->
+                    <div class="glass-panel rounded-3xl p-6">
+                        <div class="flex items-center gap-3 mb-6 pb-4 border-b border-white/10">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center text-lg">
+                                <i class="fas fa-microchip"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-white">Hardware & Signal AI</h3>
+                                <div class="text-xs text-slate-400">Clinical & Embedded Tech</div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3">
+                            <div class="p-3 rounded-xl bg-white/[0.02] border border-white/5">
+                                <h4 class="text-xs font-mono font-semibold text-emerald-400 uppercase mb-1">Embedded Platforms</h4>
+                                <p class="text-xs text-slate-300">Arduino, ESP32, ADS1299 EEG Analog Front-End, BPW34 PIN Photodiode Radiation Sensors</p>
+                            </div>
+
+                            <div class="p-3 rounded-xl bg-white/[0.02] border border-white/5">
+                                <h4 class="text-xs font-mono font-semibold text-emerald-400 uppercase mb-1">Physiological Signal Processing</h4>
+                                <p class="text-xs text-slate-300">ECG Arrhythmia, PPG Blood Glucose Estimation, EEG BCI Motor Imagery, EMG Fatigue Spectral Analysis</p>
+                            </div>
+
+                            <div class="p-3 rounded-xl bg-white/[0.02] border border-white/5">
+                                <h4 class="text-xs font-mono font-semibold text-emerald-400 uppercase mb-1">Clinical Datasets & Access</h4>
+                                <p class="text-xs text-slate-300">MIMIC-III Credentialed ICU Database (MIT CITI Certified), PhysioNet Physiological Signal Repositories</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 3: Soft Skills, Languages & Management -->
+                    <div class="glass-panel rounded-3xl p-6">
+                        <div class="flex items-center gap-3 mb-6 pb-4 border-b border-white/10">
+                            <div class="w-10 h-10 rounded-xl bg-violet-500/15 text-violet-400 flex items-center justify-center text-lg">
+                                <i class="fas fa-user-check"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-white">Soft Skills & Languages</h3>
+                                <div class="text-xs text-slate-400">Communication & Management</div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="text-xs font-mono font-semibold text-violet-400 uppercase mb-2">Professional Strengths</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="badge-tech badge-violet">Outcome-Based Education (OBE)</span>
+                                    <span class="badge-tech badge-violet">Final Year Project Supervision</span>
+                                    <span class="badge-tech badge-violet">Clinical Procurement & Compliance</span>
+                                    <span class="badge-tech badge-violet">Technical Documentation</span>
+                                    <span class="badge-tech badge-violet">Hospital Instrumentation Auditing</span>
+                                </div>
+                            </div>
+
+                            <div class="pt-4 border-t border-white/10">
+                                <h4 class="text-xs font-mono font-semibold text-violet-400 uppercase mb-3">Linguistic Proficiency</h4>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between items-center text-xs">
+                                        <span class="text-slate-200 font-semibold">Urdu</span>
+                                        <span class="text-violet-400 font-mono">Mother Tongue</span>
+                                    </div>
+                                    <div class="flex justify-between items-center text-xs">
+                                        <span class="text-slate-200 font-semibold">English</span>
+                                        <span class="text-cyan-400 font-mono">Fluent / Professional</span>
+                                    </div>
+                                    <div class="flex justify-between items-center text-xs">
+                                        <span class="text-slate-200 font-semibold">Chinese</span>
+                                        <span class="text-emerald-400 font-mono">Elementary / Working</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= EXPERIENCE SECTION ================= -->
+        <section id="experience" class="py-20 px-4 md:px-8 relative bg-navy-900/40">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="text-cyan-400 font-mono text-xs font-semibold tracking-widest uppercase mb-2 block">Career Journey</span>
+                    <h2 class="text-3xl md:text-5xl font-extrabold text-white">Work Experience</h2>
+                    <div class="w-16 h-1 bg-gradient-to-r from-cyan-500 to-emerald-500 mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="relative pl-6 md:pl-0 max-w-4xl mx-auto space-y-12">
+                    <!-- Experience 1: Lecturer -->
+                    <div class="relative flex flex-col md:flex-row items-start group">
+                        <div class="hidden md:flex flex-col items-end w-1/2 pr-8 text-right">
+                            <span class="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 font-mono text-xs font-bold border border-cyan-500/30">
+                                10/2024 – Present
+                            </span>
+                            <div class="text-sm font-semibold text-white mt-1">Superior University, Lahore</div>
+                        </div>
+
+                        <div class="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-navy-950 border-2 border-cyan-400 shadow-[0_0_12px_#06b6d4] z-10 flex items-center justify-center">
+                            <div class="w-2 h-2 rounded-full bg-cyan-400"></div>
+                        </div>
+
+                        <div class="w-full md:w-1/2 md:pl-8">
+                            <div class="glass-panel glass-panel-hover rounded-2xl p-6 border-l-4 border-l-cyan-400">
+                                <div class="md:hidden mb-2">
+                                    <span class="px-3 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 font-mono text-xs font-bold">10/2024 – Present</span>
+                                    <div class="text-xs text-slate-400 font-medium">Superior University, Lahore</div>
+                                </div>
+
+                                <h3 class="text-xl font-bold text-white mb-1">Lecturer in Biomedical Engineering</h3>
+                                <p class="text-xs font-mono text-cyan-400 mb-4">Superior University, Lahore Campus</p>
+
+                                <ul class="text-slate-300 text-xs space-y-2 mb-4">
+                                    <li class="flex items-start"><i class="fas fa-check-circle text-cyan-400 mr-2 mt-0.5"></i><span>Delivered outcome-based (OBE) lectures integrating emerging biomedical technologies.</span></li>
+                                    <li class="flex items-start"><i class="fas fa-check-circle text-cyan-400 mr-2 mt-0.5"></i><span>Supervised final-year research projects: Centralized Radiation & Environmental Hazard Monitoring Device and Mechatronic Telesurgery System.</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience 2: Lab Engineer -->
+                    <div class="relative flex flex-col md:flex-row items-start group">
+                        <div class="w-full md:w-1/2 md:pr-8 md:text-right">
+                            <div class="glass-panel glass-panel-hover rounded-2xl p-6 border-l-4 md:border-l-0 md:border-r-4 border-emerald-400">
+                                <div class="md:hidden mb-2">
+                                    <span class="px-3 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 font-mono text-xs font-bold">10/2022 – 09/2024</span>
+                                    <div class="text-xs text-slate-400 font-medium">Riphah International University, Lahore</div>
+                                </div>
+
+                                <h3 class="text-xl font-bold text-white mb-1">Lab Engineer</h3>
+                                <p class="text-xs font-mono text-emerald-400 mb-4">Riphah International University, Lahore Campus</p>
+
+                                <ul class="text-slate-300 text-xs space-y-2 mb-4">
+                                    <li class="flex items-start md:flex-row-reverse"><i class="fas fa-check-circle text-emerald-400 mr-2 md:mr-0 md:ml-2 mt-0.5"></i><span>Conducted project-based laboratory instruction on medical equipment and signal analysis.</span></li>
+                                    <li class="flex items-start md:flex-row-reverse"><i class="fas fa-check-circle text-emerald-400 mr-2 md:mr-0 md:ml-2 mt-0.5"></i><span>Organized semester project exhibitions and clinical hospital visits for biomedical scholars.</span></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-navy-950 border-2 border-emerald-400 shadow-[0_0_12px_#10b981] z-10 flex items-center justify-center">
+                            <div class="w-2 h-2 rounded-full bg-emerald-400"></div>
+                        </div>
+
+                        <div class="hidden md:flex flex-col items-start w-1/2 pl-8">
+                            <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 font-mono text-xs font-bold border border-emerald-500/30">
+                                10/2022 – 09/2024
+                            </span>
+                            <div class="text-sm font-semibold text-white mt-1">Riphah International University</div>
+                        </div>
+                    </div>
+
+                    <!-- Experience 3: Biomedical Engineer -->
+                    <div class="relative flex flex-col md:flex-row items-start group">
+                        <div class="hidden md:flex flex-col items-end w-1/2 pr-8 text-right">
+                            <span class="px-3 py-1 rounded-full bg-violet-500/10 text-violet-400 font-mono text-xs font-bold border border-violet-500/30">
+                                09/2021 – 12/2021
+                            </span>
+                            <div class="text-sm font-semibold text-white mt-1">Human Health Care</div>
+                        </div>
+
+                        <div class="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-navy-950 border-2 border-violet-400 shadow-[0_0_12px_#8b5cf6] z-10 flex items-center justify-center">
+                            <div class="w-2 h-2 rounded-full bg-violet-400"></div>
+                        </div>
+
+                        <div class="w-full md:w-1/2 md:pl-8">
+                            <div class="glass-panel glass-panel-hover rounded-2xl p-6 border-l-4 border-l-violet-400">
+                                <div class="md:hidden mb-2">
+                                    <span class="px-3 py-0.5 rounded-full bg-violet-500/10 text-violet-400 font-mono text-xs font-bold">09/2021 – 12/2021</span>
+                                    <div class="text-xs text-slate-400 font-medium">Human Health Care</div>
+                                </div>
+
+                                <h3 class="text-xl font-bold text-white mb-1">Biomedical Engineer</h3>
+                                <p class="text-xs font-mono text-violet-400 mb-4">Human Health Care</p>
+
+                                <ul class="text-slate-300 text-xs space-y-2">
+                                    <li class="flex items-start"><i class="fas fa-check-circle text-violet-400 mr-2 mt-0.5"></i><span>Coordinated technical documentation, hospital equipment procurement, and regulatory compliance.</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience 4: Internee -->
+                    <div class="relative flex flex-col md:flex-row items-start group">
+                        <div class="w-full md:w-1/2 md:pr-8 md:text-right">
+                            <div class="glass-panel glass-panel-hover rounded-2xl p-6 border-l-4 md:border-l-0 md:border-r-4 border-amber-400">
+                                <div class="md:hidden mb-2">
+                                    <span class="px-3 py-0.5 rounded-full bg-amber-500/10 text-amber-400 font-mono text-xs font-bold">06/2019 – 07/2019</span>
+                                    <div class="text-xs text-slate-400 font-medium">Combined Military Hospital (CMH)</div>
+                                </div>
+
+                                <h3 class="text-xl font-bold text-white mb-1">Biomedical Engineering Internee</h3>
+                                <p class="text-xs font-mono text-amber-400 mb-4">Combined Military Hospital (CMH)</p>
+
+                                <ul class="text-slate-300 text-xs space-y-2">
+                                    <li class="flex items-start md:flex-row-reverse"><i class="fas fa-check-circle text-amber-400 mr-2 md:mr-0 md:ml-2 mt-0.5"></i><span>Hands-on clinical experience with diagnostic laboratory and biomedical instrumentation.</span></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-navy-950 border-2 border-amber-400 shadow-[0_0_12px_#f59e0b] z-10 flex items-center justify-center">
+                            <div class="w-2 h-2 rounded-full bg-amber-400"></div>
+                        </div>
+
+                        <div class="hidden md:flex flex-col items-start w-1/2 pl-8">
+                            <span class="px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 font-mono text-xs font-bold border border-amber-500/30">
+                                06/2019 – 07/2019
+                            </span>
+                            <div class="text-sm font-semibold text-white mt-1">Combined Military Hospital (CMH)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= PROJECTS SHOWCASE SECTION ================= -->
+        <section id="projects" class="py-20 px-4 md:px-8 relative">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-12">
+                    <span class="text-cyan-400 font-mono text-xs font-semibold tracking-widest uppercase mb-2 block">Research & Innovation</span>
+                    <h2 class="text-3xl md:text-5xl font-extrabold text-white">Projects & Portfolio</h2>
+                    <div class="w-16 h-1 bg-gradient-to-r from-cyan-500 to-emerald-500 mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <!-- Filter Controls & Search -->
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4 mb-10">
+                    <!-- Filter Tabs -->
+                    <div class="flex flex-wrap justify-center gap-2">
+                        <button class="project-filter-btn active px-4 py-2 rounded-xl text-xs font-mono font-semibold border border-cyan-500/40 bg-cyan-500/20 text-cyan-400 transition-all" data-filter="all">
+                            All Projects (8)
+                        </button>
+                        <button class="project-filter-btn px-4 py-2 rounded-xl text-xs font-mono font-semibold border border-white/10 bg-white/5 text-slate-300 hover:text-white transition-all" data-filter="master">
+                            Master's & Bachelor's
+                        </button>
+                        <button class="project-filter-btn px-4 py-2 rounded-xl text-xs font-mono font-semibold border border-white/10 bg-white/5 text-slate-300 hover:text-white transition-all" data-filter="ai">
+                            AI & Medical Imaging
+                        </button>
+                        <button class="project-filter-btn px-4 py-2 rounded-xl text-xs font-mono font-semibold border border-white/10 bg-white/5 text-slate-300 hover:text-white transition-all" data-filter="bci">
+                            BCI & Tele-Surgery
+                        </button>
+                        <button class="project-filter-btn px-4 py-2 rounded-xl text-xs font-mono font-semibold border border-white/10 bg-white/5 text-slate-300 hover:text-white transition-all" data-filter="biomaterials">
+                            Bio-Materials & Hardware
+                        </button>
+                    </div>
+
+                    <!-- Search Input -->
+                    <div class="relative w-full md:w-72">
+                        <input type="text" id="project-search" placeholder="Search projects or tech..." class="w-full px-4 py-2 pl-10 rounded-xl bg-navy-900/80 border border-white/10 text-xs font-mono text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500/50">
+                        <i class="fas fa-search absolute left-3.5 top-3 text-slate-500 text-xs"></i>
+                    </div>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                    <!-- Project 1: Master's Project -->
+                    <div class="project-card glass-panel glass-panel-hover rounded-3xl p-6 flex flex-col justify-between" data-category="master ai">
+                        <div>
+                            <div class="flex justify-between items-start mb-3">
+                                <span class="badge-tech">Master's FYP (2024-2025)</span>
+                                <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-mono text-[10px] font-bold">MIMIC-III Access</span>
+                            </div>
+                            <h3 class="card-title text-lg font-bold text-white mb-2 leading-snug">
+                                AI-Enabled Cardiovascular Disease Detection & Monitoring System
+                            </h3>
+                            <p class="card-desc text-slate-300 text-xs mb-4 leading-relaxed line-clamp-3">
+                                Continuous non-invasive blood glucose estimation via photoplethysmography (PPG) and MIMIC-III database parameter extraction for AI cardiovascular risk prediction.
+                            </p>
+                            <div class="card-tags flex flex-wrap gap-1.5 mb-6">
+                                <span class="badge-tech">MIMIC-III</span>
+                                <span class="badge-tech">PPG Signal</span>
+                                <span class="badge-tech">CITI Certified</span>
+                            </div>
+                        </div>
+
+                        <button data-project-id="proj-masters" class="open-project-modal w-full py-2.5 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 text-xs font-mono font-semibold transition-all flex items-center justify-center gap-2">
+                            View Full Specifications <i class="fas fa-chevron-right text-[10px]"></i>
+                        </button>
+                    </div>
+
+                    <!-- Project 2: Bachelor's Project -->
+                    <div class="project-card glass-panel glass-panel-hover rounded-3xl p-6 flex flex-col justify-between" data-category="master ai">
+                        <div>
+                            <div class="flex justify-between items-start mb-3">
+                                <span class="badge-tech badge-emerald">Bachelor's FYP (2020-2021)</span>
+                                <span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-400 font-mono text-[10px] font-bold">UTM 2nd Award</span>
+                            </div>
+                            <h3 class="card-title text-lg font-bold text-white mb-2 leading-snug">
+                                Smart Framework for Health Monitoring & ECG Classification
+                            </h3>
+                            <p class="card-desc text-slate-300 text-xs mb-4 leading-relaxed line-clamp-3">
+                                Machine learning ECG classification using PhysioNet & digitized Arduino acquisition with remote telemetry web monitoring dashboard. Shortlisted for Ignite grant.
+                            </p>
+                            <div class="card-tags flex flex-wrap gap-1.5 mb-6">
+                                <span class="badge-tech badge-emerald">PhysioNet</span>
+                                <span class="badge-tech badge-emerald">Arduino & MATLAB</span>
+                                <span class="badge-tech badge-emerald">Ignite Grant</span>
+                            </div>
+                        </div>
+
+                        <button data-project-id="proj-bachelors" class="open-project-modal w-full py-2.5 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-mono font-semibold transition-all flex items-center justify-center gap-2">
+                            View Full Specifications <i class="fas fa-chevron-right text-[10px]"></i>
+                        </button>
+                    </div>
+
+                    <!-- Project 3: Closed Loop EEG BCI -->
+                    <div class="project-card glass-panel glass-panel-hover rounded-3xl p-6 flex flex-col justify-between" data-category="bci ai">
+                        <div>
+                            <div class="flex justify-between items-start mb-3">
+                                <span class="badge-tech badge-violet">Supervised (02/2026-Present)</span>
+                                <span class="px-2 py-0.5 rounded bg-violet-500/20 text-violet-400 font-mono text-[10px] font-bold">ADS1299 EEG</span>
+                            </div>
+                            <h3 class="card-title text-lg font-bold text-white mb-2 leading-snug">
+                                Closed Loop EEG-Driven BCI for Exoskeleton Arm Control
+                            </h3>
+                            <p class="card-desc text-slate-300 text-xs mb-4 leading-relaxed line-clamp-3">
+                                Real-time motor imagery EEG acquisition via 24-bit ADS1299 and ESP32 embedded micro-AI decoding for stroke rehabilitation assistance.
+                            </p>
+                            <div class="card-tags flex flex-wrap gap-1.5 mb-6">
+                                <span class="badge-tech badge-violet">EEG BCI</span>
+                                <span class="badge-tech badge-violet">ESP32 AI</span>
+                                <span class="badge-tech badge-violet">Rehabilitation</span>
+                            </div>
+                        </div>
+
+                        <button data-project-id="proj-eeg-bci" class="open-project-modal w-full py-2.5 rounded-xl bg-violet-500/10 hover:bg-violet-500/20 text-violet-400 border border-violet-500/30 text-xs font-mono font-semibold transition-all flex items-center justify-center gap-2">
+                            View Full Specifications <i class="fas fa-chevron-right text-[10px]"></i>
+                        </button>
+                    </div>
+
+                    <!-- Project 4: Brain Tumor CNN & Bioheat -->
+                    <div class="project-card glass-panel glass-panel-hover rounded-3xl p-6 flex flex-col justify-between" data-category="ai">
+                        <div>
+                            <div class="flex justify-between items-start mb-3">
+                                <span class="badge-tech">Supervised (01/2026-Present)</span>
+                                <span class="px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-400 font-mono text-[10px] font-bold">82.57% Accuracy</span>
+                            </div>
+                            <h3 class="card-title text-lg font-bold text-white mb-2 leading-snug">
+                                AI-Assisted Brain Tumor Detection & Thermal Ablation Framework
+                            </h3>
+                            <p class="card-desc text-slate-300 text-xs mb-4 leading-relaxed line-clamp-3">
+                                CNN multi-class MRI tumor classification coupled with COMSOL Multiphysics bioheat transfer modeling for non-invasive treatment simulation.
+                            </p>
+                            <div class="card-tags flex flex-wrap gap-1.5 mb-6">
+                                <span class="badge-tech">CNN MRI</span>
+                                <span class="badge-tech">COMSOL Simulation</span>
+                                <span class="badge-tech">Bioheat</span>
+                            </div>
+                        </div>
+
+                        <button data-project-id="proj-brain-tumor" class="open-project-modal w-full py-2.5 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 text-xs font-mono font-semibold transition-all flex items-center justify-center gap-2">
+                            View Full Specifications <i class="fas fa-chevron-right text-[10px]"></i>
+                        </button>
+                    </div>
+
+                    <!-- Project 5: Radiation Monitoring -->
+                    <div class="project-card glass-panel glass-panel-hover rounded-3xl p-6 flex flex-col justify-between" data-category="biomaterials">
+                        <div>
+                            <div class="flex justify-between items-start mb-3">
+                                <span class="badge-tech badge-amber">Supervised (2025)</span>
+                                <span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-400 font-mono text-[10px] font-bold">BPW34 Photodiode</span>
+                            </div>
+                            <h3 class="card-title text-lg font-bold text-white mb-2 leading-snug">
+                                Centralized Radiation & Environmental Hazard Monitoring Device
+                            </h3>
+                            <p class="card-desc text-slate-300 text-xs mb-4 leading-relaxed line-clamp-3">
+                                Low-cost radiation monitoring node replacing GM tubes with BPW34 PIN photodiode sensor, IoT cloud logging, and automated safety alerts.
+                            </p>
+                            <div class="card-tags flex flex-wrap gap-1.5 mb-6">
+                                <span class="badge-tech badge-amber">Radiation Detection</span>
+                                <span class="badge-tech badge-amber">IoT Cloud</span>
+                                <span class="badge-tech badge-amber">Safety Alerts</span>
+                            </div>
+                        </div>
+
+                        <button data-project-id="proj-radiation" class="open-project-modal w-full py-2.5 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 text-amber-400 border border-amber-500/30 text-xs font-mono font-semibold transition-all flex items-center justify-center gap-2">
+                            View Full Specifications <i class="fas fa-chevron-right text-[10px]"></i>
+                        </button>
+                    </div>
+
+                    <!-- Project 6: Mechatronic Telesurgery -->
+                    <div class="project-card glass-panel glass-panel-hover rounded-3xl p-6 flex flex-col justify-between" data-category="bci">
+                        <div>
+                            <div class="flex justify-between items-start mb-3">
+                                <span class="badge-tech badge-emerald">Supervised (2025)</span>
+                                <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-mono text-[10px] font-bold">< 200ms Latency</span>
+                            </div>
+                            <h3 class="card-title text-lg font-bold text-white mb-2 leading-snug">
+                                Embedded Mechatronic System for Robotic Tele-Surgery
+                            </h3>
+                            <p class="card-desc text-slate-300 text-xs mb-4 leading-relaxed line-clamp-3">
+                                Master-slave robotic teleoperation platform under USD $500 with sub-200ms wireless control and OpenCV guidance for low-resource surgical training.
+                            </p>
+                            <div class="card-tags flex flex-wrap gap-1.5 mb-6">
+                                <span class="badge-tech badge-emerald">Telesurgery</span>
+                                <span class="badge-tech badge-emerald">Computer Vision</span>
+                                <span class="badge-tech badge-emerald">Mechatronics</span>
+                            </div>
+                        </div>
+
+                        <button data-project-id="proj-telesurgery" class="open-project-modal w-full py-2.5 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-mono font-semibold transition-all flex items-center justify-center gap-2">
+                            View Full Specifications <i class="fas fa-chevron-right text-[10px]"></i>
+                        </button>
+                    </div>
+
+                    <!-- Project 7: Hydrogel Drug Release -->
+                    <div class="project-card glass-panel glass-panel-hover rounded-3xl p-6 flex flex-col justify-between" data-category="biomaterials">
+                        <div>
+                            <div class="flex justify-between items-start mb-3">
+                                <span class="badge-tech badge-violet">Supervised (2024-2025)</span>
+                                <span class="px-2 py-0.5 rounded bg-violet-500/20 text-violet-400 font-mono text-[10px] font-bold">37°C Trigger</span>
+                            </div>
+                            <h3 class="card-title text-lg font-bold text-white mb-2 leading-snug">
+                                Smart Biopolymer (Alginate Hydrogel) for Controlled Drug Release
+                            </h3>
+                            <p class="card-desc text-slate-300 text-xs mb-4 leading-relaxed line-clamp-3">
+                                Temperature-responsive alginate hydrogel formulation demonstrating body temperature (37°C) accelerated drug release kinetics for tissue engineering.
+                            </p>
+                            <div class="card-tags flex flex-wrap gap-1.5 mb-6">
+                                <span class="badge-tech badge-violet">Alginate Biopolymer</span>
+                                <span class="badge-tech badge-violet">Release Kinetics</span>
+                                <span class="badge-tech badge-violet">Tissue Eng</span>
+                            </div>
+                        </div>
+
+                        <button data-project-id="proj-hydrogel" class="open-project-modal w-full py-2.5 rounded-xl bg-violet-500/10 hover:bg-violet-500/20 text-violet-400 border border-violet-500/30 text-xs font-mono font-semibold transition-all flex items-center justify-center gap-2">
+                            View Full Specifications <i class="fas fa-chevron-right text-[10px]"></i>
+                        </button>
+                    </div>
+
+                    <!-- Project 8: Musculoskeletal Suite -->
+                    <div class="project-card glass-panel glass-panel-hover rounded-3xl p-6 flex flex-col justify-between" data-category="biomaterials bci">
+                        <div>
+                            <div class="flex justify-between items-start mb-3">
+                                <span class="badge-tech">Supervised (2024-2025)</span>
+                                <span class="px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-400 font-mono text-[10px] font-bold">3 Devices Suite</span>
+                            </div>
+                            <h3 class="card-title text-lg font-bold text-white mb-2 leading-snug">
+                                Musculoskeletal Biomechanics & Rehabilitation Suite
+                            </h3>
+                            <p class="card-desc text-slate-300 text-xs mb-4 leading-relaxed line-clamp-3">
+                                Suite of orthopedic rehabilitation devices including Smart Knee Brace, EMG Muscle Fatigue Monitor, and Mayo Voice-Controlled Prosthetic Arm.
+                            </p>
+                            <div class="card-tags flex flex-wrap gap-1.5 mb-6">
+                                <span class="badge-tech">Smart Knee Brace</span>
+                                <span class="badge-tech">EMG Fatigue</span>
+                                <span class="badge-tech">Voice Arm</span>
+                            </div>
+                        </div>
+
+                        <button data-project-id="proj-rehab-suite" class="open-project-modal w-full py-2.5 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 text-xs font-mono font-semibold transition-all flex items-center justify-center gap-2">
+                            View Full Specifications <i class="fas fa-chevron-right text-[10px]"></i>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= PUBLICATIONS & SCHOLARLY RESEARCH SECTION ================= -->
+        <section id="publications" class="py-20 px-4 md:px-8 relative border-t border-white/5">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="text-cyan-400 font-mono text-xs font-semibold tracking-widest uppercase mb-2 block">Scholarly Contributions</span>
+                    <h2 class="text-3xl md:text-5xl font-extrabold text-white">Publications & Research Papers</h2>
+                    <div class="w-16 h-1 bg-gradient-to-r from-cyan-500 to-emerald-500 mx-auto mt-4 rounded-full"></div>
+                    <p class="text-slate-400 text-sm mt-4 max-w-2xl mx-auto">
+                        Scientific research articles bridging unsupervised machine learning, clinical survival analysis, precision pharmacogenomics, and pediatric oncology.
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-8 items-stretch">
+
+                    <!-- Publication 1 -->
+                    <article class="glass-panel glass-panel-hover rounded-3xl p-7 md:p-8 flex flex-col justify-between border-t-4 border-t-cyan-400 relative overflow-hidden group">
+                        <div>
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                                <span class="px-3 py-1 rounded-full pub-badge-first font-mono text-xs font-bold flex items-center gap-1.5">
+                                    <i class="fas fa-star text-amber-400 text-[11px]"></i> First & Co-Corresponding Author
+                                </span>
+                                <span class="text-xs font-mono text-slate-400 flex items-center gap-1">
+                                    <i class="fas fa-file-medical-alt text-cyan-400"></i> Cardiovascular AI
+                                </span>
+                            </div>
+
+                            <h3 class="text-xl md:text-2xl font-bold text-white mb-3 leading-snug group-hover:text-cyan-300 transition-colors">
+                                A Diagnosis-Independent Severity Phenotype in Cardiovascular Admissions Using Unsupervised Machine Learning and Survival Analysis
+                            </h3>
+
+                            <!-- Authors List -->
+                            <div class="p-3.5 rounded-2xl bg-navy-950/70 border border-white/5 mb-5 font-mono text-xs">
+                                <div class="text-slate-400 text-[11px] uppercase tracking-wider mb-1.5 flex items-center gap-1.5">
+                                    <i class="fas fa-users text-cyan-400"></i> Authors & Affiliations:
+                                </div>
+                                <div class="text-slate-200 leading-relaxed text-xs">
+                                    <span class="text-cyan-300 font-bold bg-cyan-500/15 px-2 py-0.5 rounded border border-cyan-500/30 author-self-glow">Faria Javed<sup>1*</sup></span>, 
+                                    <span class="text-slate-300">Fatime Taj<sup>2</sup></span>, 
+                                    <span class="text-slate-300">Adnan Yousaf<sup>3</sup></span>, 
+                                    <span class="text-cyan-300 font-semibold">Sara Aslam<sup>1*</sup></span>
+                                </div>
+                                <div class="text-[11px] text-slate-400 mt-2.5 pt-2 border-t border-white/5 flex flex-wrap items-center gap-x-3 gap-y-1">
+                                    <span><sup>1</sup> Dept. of Biomedical Engineering, Superior University Lahore</span>
+                                    <span>•</span>
+                                    <span><sup>*</sup> Corresponding Author</span>
+                                </div>
+                            </div>
+
+                            <!-- Abstract Summary -->
+                            <p class="text-slate-300 text-xs md:text-sm leading-relaxed mb-5">
+                                Identifies distinct, diagnosis-independent physiological severity clusters among acute cardiovascular admissions using unsupervised machine learning. By coupling phenotypic clustering with Kaplan-Meier and Cox proportional hazards survival analysis, the study demonstrates superior dynamic risk stratification for clinical triage compared to standard ICD admission classifications.
+                            </p>
+
+                            <!-- Key Methodology Features -->
+                            <div class="grid grid-cols-2 gap-2.5 mb-6 text-[11px]">
+                                <div class="p-3 rounded-xl bg-white/[0.02] border border-white/5">
+                                    <span class="text-cyan-400 font-mono font-semibold block mb-1">
+                                        <i class="fas fa-project-diagram mr-1"></i> Unsupervised Phenotyping
+                                    </span>
+                                    <span class="text-slate-400">Clusters multi-parameter hemodynamics and vital biomarkers independent of admission labels.</span>
+                                </div>
+                                <div class="p-3 rounded-xl bg-white/[0.02] border border-white/5">
+                                    <span class="text-emerald-400 font-mono font-semibold block mb-1">
+                                        <i class="fas fa-chart-line mr-1"></i> Survival Analysis
+                                    </span>
+                                    <span class="text-slate-400">Evaluates endpoints via Kaplan-Meier curves and Cox proportional hazards models.</span>
+                                </div>
+                            </div>
+
+                            <!-- Tags -->
+                            <div class="flex flex-wrap gap-1.5 mb-6">
+                                <span class="badge-tech">Unsupervised ML</span>
+                                <span class="badge-tech">Survival Analysis (Cox PH)</span>
+                                <span class="badge-tech badge-emerald">Cardiovascular Admissions</span>
+                                <span class="badge-tech">Severity Phenotyping</span>
+                                <span class="badge-tech badge-violet">Clinical Informatics</span>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-3">
+                            <div class="flex items-center gap-2">
+                                <button onclick="copyCitation('pub-1')" class="px-3.5 py-2 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 text-xs font-mono font-semibold transition-all flex items-center gap-1.5 hover:scale-105">
+                                    <i class="fas fa-quote-right"></i> Copy APA
+                                </button>
+                                <button onclick="openCitationModal('pub-1')" class="px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 text-xs font-mono transition-all flex items-center gap-1.5 hover:scale-105">
+                                    <i class="fas fa-code"></i> BibTeX / Formats
+                                </button>
+                            </div>
+                            <span class="text-[11px] font-mono text-slate-400 flex items-center gap-1">
+                                <i class="fas fa-check-circle text-emerald-400"></i> Peer-Reviewed
+                            </span>
+                        </div>
+                    </article>
+
+                    <!-- Publication 2 -->
+                    <article class="glass-panel glass-panel-hover rounded-3xl p-7 md:p-8 flex flex-col justify-between border-t-4 border-t-emerald-400 relative overflow-hidden group">
+                        <div>
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                                <span class="px-3 py-1 rounded-full pub-badge-co font-mono text-xs font-bold flex items-center gap-1.5">
+                                    <i class="fas fa-dna text-emerald-400 text-[11px]"></i> Pharmacogenomics & Oncology
+                                </span>
+                                <span class="text-xs font-mono text-slate-400 flex items-center gap-1">
+                                    <i class="fas fa-microscope text-emerald-400"></i> Pediatric Oncology
+                                </span>
+                            </div>
+
+                            <h3 class="text-xl md:text-2xl font-bold text-white mb-3 leading-snug group-hover:text-emerald-300 transition-colors">
+                                Polygenic Risk Score Matches Machine-Learning Discrimination Without Overfitting in Predicting Chemotherapy-Induced Hepatotoxicity in Pediatrics Acute Lymphoblastic Leukemia
+                            </h3>
+
+                            <!-- Authors List -->
+                            <div class="p-3.5 rounded-2xl bg-navy-950/70 border border-white/5 mb-5 font-mono text-xs">
+                                <div class="text-slate-400 text-[11px] uppercase tracking-wider mb-1.5 flex items-center gap-1.5">
+                                    <i class="fas fa-users text-emerald-400"></i> Authors & Affiliations:
+                                </div>
+                                <div class="text-slate-200 leading-relaxed text-xs">
+                                    <span class="text-slate-300">Sara Aslam<sup>1*</sup></span>, 
+                                    <span class="text-slate-300">Sumbal Sarwar<sup>2</sup></span>, 
+                                    <span class="text-slate-300">Adnan Yousaf<sup>3</sup></span>, 
+                                    <span class="text-emerald-300 font-bold bg-emerald-500/15 px-2 py-0.5 rounded border border-emerald-500/30 author-self-glow">Faria Javed<sup>1</sup></span>, 
+                                    <span class="text-slate-300">Shabana<sup>4*</sup></span>
+                                </div>
+                                <div class="text-[11px] text-slate-400 mt-2.5 pt-2 border-t border-white/5 flex flex-wrap items-center gap-x-3 gap-y-1">
+                                    <span><sup>1</sup> Dept. of Biomedical Engineering, Superior University Lahore</span>
+                                    <span>•</span>
+                                    <span><sup>*</sup> Corresponding Author</span>
+                                </div>
+                            </div>
+
+                            <!-- Abstract Summary -->
+                            <p class="text-slate-300 text-xs md:text-sm leading-relaxed mb-5">
+                                Investigates predictive discrimination of Polygenic Risk Scores (PRS) versus supervised machine learning algorithms in anticipating chemotherapy-induced hepatotoxicity in pediatric Acute Lymphoblastic Leukemia (ALL). Demonstrates that linear additive genomic risk scoring matches complex non-linear ML discrimination while actively avoiding overfitting.
+                            </p>
+
+                            <!-- Key Methodology Features -->
+                            <div class="grid grid-cols-2 gap-2.5 mb-6 text-[11px]">
+                                <div class="p-3 rounded-xl bg-white/[0.02] border border-white/5">
+                                    <span class="text-emerald-400 font-mono font-semibold block mb-1">
+                                        <i class="fas fa-dna mr-1"></i> PRS vs. ML Benchmarking
+                                    </span>
+                                    <span class="text-slate-400">Comparative AUROC and sensitivity profiles across pediatric cohort genomes.</span>
+                                </div>
+                                <div class="p-3 rounded-xl bg-white/[0.02] border border-white/5">
+                                    <span class="text-violet-400 font-mono font-semibold block mb-1">
+                                        <i class="fas fa-shield-alt mr-1"></i> Overfitting Mitigation
+                                    </span>
+                                    <span class="text-slate-400">Guarantees generalizable clinical translation without high-dimensional feature leakage.</span>
+                                </div>
+                            </div>
+
+                            <!-- Tags -->
+                            <div class="flex flex-wrap gap-1.5 mb-6">
+                                <span class="badge-tech badge-emerald">Polygenic Risk Score (PRS)</span>
+                                <span class="badge-tech">Pediatric ALL</span>
+                                <span class="badge-tech badge-amber">Chemotherapy Hepatotoxicity</span>
+                                <span class="badge-tech">Machine Learning Discrimination</span>
+                                <span class="badge-tech badge-violet">Precision Oncology</span>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-3">
+                            <div class="flex items-center gap-2">
+                                <button onclick="copyCitation('pub-2')" class="px-3.5 py-2 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-mono font-semibold transition-all flex items-center gap-1.5 hover:scale-105">
+                                    <i class="fas fa-quote-right"></i> Copy APA
+                                </button>
+                                <button onclick="openCitationModal('pub-2')" class="px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 text-xs font-mono transition-all flex items-center gap-1.5 hover:scale-105">
+                                    <i class="fas fa-code"></i> BibTeX / Formats
+                                </button>
+                            </div>
+                            <span class="text-[11px] font-mono text-slate-400 flex items-center gap-1">
+                                <i class="fas fa-check-circle text-emerald-400"></i> Peer-Reviewed
+                            </span>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= INTERACTIVE BIO-SIGNAL LAB PLAYGROUND ================= -->
+        <section id="lab-simulator" class="py-20 px-4 md:px-8 relative bg-navy-900/60 border-y border-white/10">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-12">
+                    <span class="text-emerald-400 font-mono text-xs font-semibold tracking-widest uppercase mb-2 block">Interactive Technology Playground</span>
+                    <h2 class="text-3xl md:text-5xl font-extrabold text-white">Bio-Signal Diagnostic Lab</h2>
+                    <p class="text-slate-400 text-sm mt-3 max-w-2xl mx-auto">
+                        Test and manipulate physiological signal generators (ECG, PPG, EEG, EMG) in real time to observe diagnostic feature extraction and noise processing.
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-12 gap-8 items-center">
+                    <!-- Left Canvas Sandbox -->
+                    <div class="lg:col-span-8 glass-panel rounded-3xl p-6 relative">
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="flex items-center gap-3">
+                                <span class="w-3 h-3 rounded-full bg-emerald-400 animate-pulse-glow"></span>
+                                <h3 class="text-base font-mono font-bold text-white">Signal Generator Scope</h3>
+                            </div>
+                            <div class="text-xs font-mono text-slate-400" id="lab-canvas-fps">50 FPS • Active</div>
+                        </div>
+
+                        <div class="relative w-full h-72 bg-navy-950 rounded-2xl border border-white/10 overflow-hidden shadow-inner flex items-center justify-center bio-grid-pattern">
+                            <canvas id="lab-canvas" class="w-full h-full"></canvas>
+                        </div>
+
+                        <!-- Live Diagnostic Stat Indicators -->
+                        <div class="mt-4 grid sm:grid-cols-2 gap-4">
+                            <div class="p-3.5 rounded-xl bg-navy-950/80 border border-white/10 flex items-center gap-3" id="lab-stat-primary">
+                                <span class="text-xs text-gray-400">Cardiovascular Rhythm:</span> <span class="text-emerald-400 font-bold">Sinus Rhythm (Normal)</span>
+                            </div>
+                            <div class="p-3.5 rounded-xl bg-navy-950/80 border border-white/10 flex items-center gap-3" id="lab-stat-secondary">
+                                <span class="text-xs text-gray-400">Arrhythmia Detection AI:</span> <span class="text-cyan-400 font-bold">Low Risk (MIMIC-III Classifier)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Controls Panel -->
+                    <div class="lg:col-span-4 glass-panel rounded-3xl p-6 space-y-6">
+                        <h3 class="text-lg font-bold text-white flex items-center gap-2 pb-3 border-b border-white/10">
+                            <i class="fas fa-sliders-h text-cyan-400"></i> Signal Parameters
+                        </h3>
+
+                        <!-- Signal Selector -->
+                        <div>
+                            <label class="block text-xs font-mono text-slate-300 uppercase mb-2">Physiological Target</label>
+                            <select id="lab-signal-type" class="w-full px-4 py-2.5 rounded-xl bg-navy-950 border border-white/10 text-xs font-mono text-cyan-400 focus:outline-none focus:border-cyan-500">
+                                <option value="ECG">ECG (Electrocardiogram - Cardiovascular)</option>
+                                <option value="PPG">PPG (Photoplethysmogram - Blood Glucose)</option>
+                                <option value="EEG">EEG (Electroencephalogram - BCI Alpha)</option>
+                                <option value="EMG">EMG (Electromyogram - Muscle Fatigue)</option>
+                            </select>
+                        </div>
+
+                        <!-- Heart Rate Slider -->
+                        <div>
+                            <div class="flex justify-between text-xs font-mono text-slate-300 mb-2">
+                                <span>Heart Rate / Frequency (BPM)</span>
+                                <span class="text-emerald-400 font-bold" id="lab-bpm-val">72</span>
+                            </div>
+                            <input type="range" id="lab-bpm" min="40" max="180" value="72" class="w-full accent-cyan-500 cursor-pointer">
+                        </div>
+
+                        <!-- Noise Level Slider -->
+                        <div>
+                            <div class="flex justify-between text-xs font-mono text-slate-300 mb-2">
+                                <span>Artifact & Electrode Noise</span>
+                                <span class="text-amber-400 font-bold" id="lab-noise-val">0.05</span>
+                            </div>
+                            <input type="range" id="lab-noise" min="0" max="40" value="5" class="w-full accent-amber-500 cursor-pointer">
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 text-xs text-slate-300 leading-relaxed">
+                            <i class="fas fa-microscope text-cyan-400 mr-1.5"></i>
+                            <strong>Clinical Context:</strong> Simulated signals model the acquisition pipeline used in Engr. Faria's research with MIMIC-III, PhysioNet, and ADS1299 EEG front-ends.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= ACHIEVEMENTS & CERTIFICATES SECTION ================= -->
+        <section id="achievements" class="py-20 px-4 md:px-8 relative">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="text-amber-400 font-mono text-xs font-semibold tracking-widest uppercase mb-2 block">Recognitions & Verified Credentials</span>
+                    <h2 class="text-3xl md:text-5xl font-extrabold text-white">Certifications & Honors</h2>
+                    <div class="w-16 h-1 bg-gradient-to-r from-amber-500 to-cyan-500 mx-auto mt-4 rounded-full"></div>
+                    <p class="text-slate-400 text-sm mt-3 max-w-2xl mx-auto">
+                        Official academic degrees, international research ethics credentials, test scores, and award recognitions with verified document scans.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                    <!-- Credential 1: HEC-Attested Master's Degree -->
+                    <div class="glass-panel glass-panel-hover rounded-3xl p-6 border-t-4 border-t-cyan-400 flex flex-col justify-between group">
+                        <div>
+                            <!-- Certificate Image Thumbnail -->
+                            <div class="cert-card-img-wrapper mb-4" onclick="openCertificateLightbox('certificates/Master Degree and certificate/Master_Degree_and_HEC_Attestation_page_4.png', 'Master of Science in Biomedical Engineering Degree Certificate — Attested by Higher Education Commission (HEC) of Pakistan', 'certificates/Master Degree and certificate/Master_Degree_and_HEC_Attestation.pdf')">
+                                <img src="certificates/Master Degree and certificate/Master_Degree_and_HEC_Attestation_page_4.png" alt="HEC Attested Master Degree Certificate" class="cert-card-img">
+                                <div class="cert-overlay-badge">
+                                    <i class="fas fa-search-plus"></i> View Certificate
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="badge-tech">HEC Attested</span>
+                                <span class="badge-tech badge-emerald">Degree & Transcript</span>
+                            </div>
+
+                            <h3 class="text-lg font-bold text-white mb-1.5 leading-snug">HEC-Attested MS in Biomedical Engineering</h3>
+                            <h4 class="text-xs font-mono text-cyan-400 mb-3 flex items-center gap-1.5">
+                                <i class="fas fa-university"></i> Riphah Univ. & HEC Pakistan
+                            </h4>
+                            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                                Officially attested Master of Science in Biomedical Engineering degree and transcript recognized by the Higher Education Commission, Islamabad (Attestation Ref: HEC/A&amp;A/DAS/2026/5129954).
+                            </p>
+                        </div>
+
+                        <div class="pt-3 border-t border-white/10 flex flex-wrap items-center justify-between gap-2 text-xs font-mono">
+                            <button onclick="openCertificateLightbox('certificates/Master Degree and certificate/Master_Degree_and_HEC_Attestation_page_4.png', 'Master of Science in Biomedical Engineering Degree Certificate — Attested by Higher Education Commission (HEC) of Pakistan', 'certificates/Master Degree and certificate/Master_Degree_and_HEC_Attestation.pdf')" class="text-cyan-400 hover:text-cyan-300 inline-flex items-center gap-1">
+                                <i class="fas fa-expand"></i> Enlarge Certificate
+                            </button>
+                            <a href="certificates/Master Degree and certificate/Master_Degree_and_HEC_Attestation.pdf" target="_blank" class="text-slate-400 hover:text-white inline-flex items-center gap-1">
+                                <i class="fas fa-file-pdf text-rose-400"></i> Full PDF
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Credential 2: CITI Program Ethics Credential -->
+                    <div class="glass-panel glass-panel-hover rounded-3xl p-6 border-t-4 border-t-emerald-400 flex flex-col justify-between group">
+                        <div>
+                            <!-- Certificate Image Thumbnail -->
+                            <div class="cert-card-img-wrapper mb-4" onclick="openCertificateLightbox('certificates/Citi completeion certificate/citiCompletionCertificate_12942627_60527282.png', 'CITI Program Human Research Ethics Credential — Massachusetts Institute of Technology (MIT) Affiliates', 'certificates/Citi completeion certificate/citiCompletionCertificate_12942627_60527282.pdf')">
+                                <img src="certificates/Citi completeion certificate/citiCompletionCertificate_12942627_60527282.png" alt="CITI Program Research Ethics Certificate" class="cert-card-img">
+                                <div class="cert-overlay-badge">
+                                    <i class="fas fa-search-plus"></i> View Certificate
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="badge-tech badge-emerald">MIT Affiliates</span>
+                                <span class="badge-tech">MIMIC-III Authorized</span>
+                            </div>
+
+                            <h3 class="text-lg font-bold text-white mb-1.5 leading-snug">CITI Research Ethics Certification</h3>
+                            <h4 class="text-xs font-mono text-emerald-400 mb-3 flex items-center gap-1.5">
+                                <i class="fas fa-shield-alt"></i> MIT Affiliates / CITI Program
+                            </h4>
+                            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                                Completed formal Human Research ethics coursework (Record ID: 60527282) under MIT requirements to earn credentialed investigator access to the MIMIC-III database.
+                            </p>
+                        </div>
+
+                        <div class="pt-3 border-t border-white/10 flex flex-wrap items-center justify-between gap-2 text-xs font-mono">
+                            <button onclick="openCertificateLightbox('certificates/Citi completeion certificate/citiCompletionCertificate_12942627_60527282.png', 'CITI Program Human Research Ethics Credential — Massachusetts Institute of Technology (MIT) Affiliates', 'certificates/Citi completeion certificate/citiCompletionCertificate_12942627_60527282.pdf')" class="text-emerald-400 hover:text-emerald-300 inline-flex items-center gap-1">
+                                <i class="fas fa-expand"></i> Enlarge Certificate
+                            </button>
+                            <a href="https://www.citiprogram.org/verify/?kbce18feb-7eb8-47c8-92b0-82a21d792edd-6052728" target="_blank" class="text-slate-400 hover:text-white inline-flex items-center gap-1">
+                                <i class="fas fa-external-link-alt text-[10px]"></i> Verify Online
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Credential 3: UTM International Poster Award -->
+                    <div class="glass-panel glass-panel-hover rounded-3xl p-6 border-t-4 border-t-amber-400 flex flex-col justify-between group">
+                        <div>
+                            <!-- Certificate Image Thumbnail -->
+                            <div class="cert-card-img-wrapper mb-4" onclick="openCertificateLightbox('certificates/2nd Position International Poster Award/Healthcare Technologies Certificate.png', '2nd Position International Poster Award in Healthcare Technologies — Universiti Teknologi Malaysia (UTM)', 'certificates/2nd Position International Poster Award/Healthcare Technologies Certificate.pdf')">
+                                <img src="certificates/2nd Position International Poster Award/Healthcare Technologies Certificate.png" alt="UTM Poster Award Certificate" class="cert-card-img">
+                                <div class="cert-overlay-badge">
+                                    <i class="fas fa-search-plus"></i> View Award Certificate
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="badge-tech badge-amber">2nd Position Award</span>
+                                <span class="badge-tech">UTM Malaysia</span>
+                            </div>
+
+                            <h3 class="text-lg font-bold text-white mb-1.5 leading-snug">2nd Position International Poster Award</h3>
+                            <h4 class="text-xs font-mono text-amber-400 mb-3 flex items-center gap-1.5">
+                                <i class="fas fa-trophy"></i> iCBME &amp; iMEDiTEC Conference (UTM)
+                            </h4>
+                            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                                Won 2nd position in undergraduate Healthcare Technologies competition at Universiti Teknologi Malaysia (June 29–30, 2021) for the Smart Framework for Health Monitoring.
+                            </p>
+                        </div>
+
+                        <div class="pt-3 border-t border-white/10 flex flex-wrap items-center justify-between gap-2 text-xs font-mono">
+                            <button onclick="openCertificateLightbox('certificates/2nd Position International Poster Award/Healthcare Technologies Certificate.png', '2nd Position International Poster Award in Healthcare Technologies — Universiti Teknologi Malaysia (UTM)', 'certificates/2nd Position International Poster Award/Healthcare Technologies Certificate.pdf')" class="text-amber-400 hover:text-amber-300 inline-flex items-center gap-1">
+                                <i class="fas fa-expand"></i> Enlarge Certificate
+                            </button>
+                            <a href="certificates/2nd Position International Poster Award/Healthcare Technologies Certificate.pdf" target="_blank" class="text-slate-400 hover:text-white inline-flex items-center gap-1">
+                                <i class="fas fa-file-pdf text-rose-400"></i> Full PDF
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Credential 4: IELTS Official Academic Test Result -->
+                    <div class="glass-panel glass-panel-hover rounded-3xl p-6 border-t-4 border-t-violet-400 flex flex-col justify-between group">
+                        <div>
+                            <!-- Certificate Image Thumbnail -->
+                            <div class="cert-card-img-wrapper mb-4" onclick="openCertificateLightbox('certificates/Ielts score/IELTS Official Test Result.png', 'IELTS Official Academic Test Report Form — Overall Band 6.5 (CEFR B2 Level)', 'certificates/Ielts score/IELTS Official Test Result.pdf')">
+                                <img src="certificates/Ielts score/IELTS Official Test Result.png" alt="IELTS Official Test Report Form" class="cert-card-img">
+                                <div class="cert-overlay-badge">
+                                    <i class="fas fa-search-plus"></i> View Test Report
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="badge-tech badge-violet">Overall Band 6.5</span>
+                                <span class="badge-tech">CEFR B2 Level</span>
+                            </div>
+
+                            <h3 class="text-lg font-bold text-white mb-1.5 leading-snug">IELTS Official Academic English Certificate</h3>
+                            <h4 class="text-xs font-mono text-violet-400 mb-3 flex items-center gap-1.5">
+                                <i class="fas fa-language"></i> British Council / IDP / Cambridge
+                            </h4>
+                            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                                Certified Academic English proficiency (Listening: 7.5, Reading: 6.5, Speaking: 6.5, Writing: 5.5). TRF Number: 26PK507307JAVF011A.
+                            </p>
+                        </div>
+
+                        <div class="pt-3 border-t border-white/10 flex flex-wrap items-center justify-between gap-2 text-xs font-mono">
+                            <button onclick="openCertificateLightbox('certificates/Ielts score/IELTS Official Test Result.png', 'IELTS Official Academic Test Report Form — Overall Band 6.5 (CEFR B2 Level)', 'certificates/Ielts score/IELTS Official Test Result.pdf')" class="text-violet-400 hover:text-violet-300 inline-flex items-center gap-1">
+                                <i class="fas fa-expand"></i> Enlarge TRF Form
+                            </button>
+                            <a href="certificates/Ielts score/IELTS Official Test Result.pdf" target="_blank" class="text-slate-400 hover:text-white inline-flex items-center gap-1">
+                                <i class="fas fa-file-pdf text-rose-400"></i> Full PDF
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Credential 5: Ignite National ICT Grant Shortlist -->
+                    <div class="glass-panel glass-panel-hover rounded-3xl p-6 border-t-4 border-t-emerald-400 flex flex-col justify-between group">
+                        <div>
+                            <!-- Certificate Image Thumbnail -->
+                            <div class="cert-card-img-wrapper mb-4" onclick="openCertificateLightbox('certificates/Nigri funding/FYP Final term Presentation (1)-pages-6-pages-5.png', 'National Grassroots ICT Research Initiative (NGIRI) Funding Presentation Verification — Ignite National Technology Fund', 'certificates/Nigri funding/FYP Final term Presentation (1)-pages-6-pages-5.pdf')">
+                                <img src="certificates/Nigri funding/FYP Final term Presentation (1)-pages-6-pages-5.png" alt="Ignite NGIRI Funding Verification" class="cert-card-img">
+                                <div class="cert-overlay-badge">
+                                    <i class="fas fa-search-plus"></i> View Verification
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="badge-tech badge-emerald">National Grant</span>
+                                <span class="badge-tech">Ministry of IT</span>
+                            </div>
+
+                            <h3 class="text-lg font-bold text-white mb-1.5 leading-snug">Ignite National ICT Research Grant</h3>
+                            <h4 class="text-xs font-mono text-emerald-400 mb-3 flex items-center gap-1.5">
+                                <i class="fas fa-hand-holding-usd"></i> Ignite NGIRI Program (2020–2021)
+                            </h4>
+                            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                                Undergraduate engineering research project shortlisted for competitive national innovation funding by the Ignite National Grassroots ICT Research Initiative program.
+                            </p>
+                        </div>
+
+                        <div class="pt-3 border-t border-white/10 flex flex-wrap items-center justify-between gap-2 text-xs font-mono">
+                            <button onclick="openCertificateLightbox('certificates/Nigri funding/FYP Final term Presentation (1)-pages-6-pages-5.png', 'National Grassroots ICT Research Initiative (NGIRI) Funding Presentation Verification — Ignite National Technology Fund', 'certificates/Nigri funding/FYP Final term Presentation (1)-pages-6-pages-5.pdf')" class="text-emerald-400 hover:text-emerald-300 inline-flex items-center gap-1">
+                                <i class="fas fa-expand"></i> View Slide
+                            </button>
+                            <a href="https://ignite.org.pk/national-grassroots-research-initiative" target="_blank" class="text-slate-400 hover:text-white inline-flex items-center gap-1">
+                                <i class="fas fa-external-link-alt text-[10px]"></i> Ignite Portal
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Credential 6: YPEG Jury Member Evaluation -->
+                    <div class="glass-panel glass-panel-hover rounded-3xl p-6 border-t-4 border-t-cyan-400 flex flex-col justify-between group">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-cyan-500/15 text-cyan-400 flex items-center justify-center text-2xl mb-4">
+                                <i class="fas fa-gavel"></i>
+                            </div>
+
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="badge-tech">Jury Evaluator</span>
+                                <span class="badge-tech badge-cyan">YPEG Pakistan</span>
+                            </div>
+
+                            <h3 class="text-lg font-bold text-white mb-1.5 leading-snug">YPEG Jury Evaluation Recognition</h3>
+                            <h4 class="text-xs font-mono text-cyan-400 mb-3 flex items-center gap-1.5">
+                                <i class="fas fa-award"></i> Young Professional Excellence Group
+                            </h4>
+                            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                                Recognition certificate for impeccable performance as an expert technical jury member evaluating biomedical and multidisciplinary student innovation projects.
+                            </p>
+                        </div>
+
+                        <div class="pt-3 border-t border-white/10 flex flex-wrap items-center justify-between gap-2 text-xs font-mono">
+                            <a href="https://www.linkedin.com/posts/ypeg-pakistan_youngengineers-ypeg-youthempowerment-activity-7221756471242276864-MZoL" target="_blank" class="text-cyan-400 hover:text-cyan-300 inline-flex items-center gap-1.5">
+                                <i class="fab fa-linkedin"></i> LinkedIn Recognition Post <i class="fas fa-external-link-alt text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Credential 7: Best Coach Award -->
+                    <div class="glass-panel glass-panel-hover rounded-3xl p-6 border-t-4 border-t-violet-400 flex flex-col justify-between group">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-violet-500/15 text-violet-400 flex items-center justify-center text-2xl mb-4">
+                                <i class="fas fa-medal"></i>
+                            </div>
+
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="badge-tech badge-violet">Best Coach</span>
+                                <span class="badge-tech">Inter-University</span>
+                            </div>
+
+                            <h3 class="text-lg font-bold text-white mb-1.5 leading-snug">Best Coach & Leadership Award</h3>
+                            <h4 class="text-xs font-mono text-violet-400 mb-3 flex items-center gap-1.5">
+                                <i class="fas fa-users-cog"></i> Inter-University Faculty Sports
+                            </h4>
+                            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                                Awarded Best Coach at Inter-University Sports Matches for outstanding athletic team development and student leadership mentorship.
+                            </p>
+                        </div>
+
+                        <div class="pt-3 border-t border-white/10 text-xs font-mono text-violet-400 flex items-center gap-1">
+                            <i class="fas fa-award"></i> Athletic Mentorship Honor
+                        </div>
+                    </div>
+
+                    <!-- Credential 8: ASME & Faculty Sports Winner -->
+                    <div class="glass-panel glass-panel-hover rounded-3xl p-6 border-t-4 border-t-amber-400 flex flex-col justify-between group">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-amber-500/15 text-amber-400 flex items-center justify-center text-2xl mb-4">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="badge-tech badge-amber">ASME Member</span>
+                                <span class="badge-tech">Faculty Winner</span>
+                            </div>
+
+                            <h3 class="text-lg font-bold text-white mb-1.5 leading-snug">ASME UET & Faculty Sports Winner</h3>
+                            <h4 class="text-xs font-mono text-amber-400 mb-3 flex items-center gap-1.5">
+                                <i class="fas fa-cog"></i> ASME UET & Superior Faculty Sports
+                            </h4>
+                            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                                Certificate of active performance with American Society of Mechanical Engineers (ASME) UET Lahore and Best Carrom Player award at the Faculty Meet.
+                            </p>
+                        </div>
+
+                        <div class="pt-3 border-t border-white/10 flex flex-wrap items-center justify-between gap-2 text-xs font-mono">
+                            <a href="https://www.facebook.com/ASME.UET/" target="_blank" class="text-amber-400 hover:text-amber-300 inline-flex items-center gap-1">
+                                ASME UET Society <i class="fas fa-external-link-alt ml-1 text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= CONTACT & INSTITUTIONAL AFFILIATIONS ================= -->
+        <section id="contact" class="py-20 px-4 md:px-8 relative bg-navy-900/40 border-t border-white/10">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="text-cyan-400 font-mono text-xs font-semibold tracking-widest uppercase mb-2 block">Get in Touch</span>
+                    <h2 class="text-3xl md:text-5xl font-extrabold text-white">Contact & Collaboration</h2>
+                    <div class="w-16 h-1 bg-gradient-to-r from-cyan-500 to-emerald-500 mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="grid lg:grid-cols-12 gap-8 items-start">
+                    <!-- Contact Info & Institutions -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <div class="glass-panel rounded-3xl p-6">
+                            <h3 class="text-xl font-bold text-white mb-6">Direct Information</h3>
+
+                            <div class="space-y-4 text-sm">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-user-graduate"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs text-slate-400">Current Affiliation</div>
+                                        <div class="text-white font-semibold">Lecturer, Superior University Lahore</div>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center gap-4">
+                                    <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs text-slate-400">Location</div>
+                                        <div class="text-white font-semibold">Lahore, Punjab, Pakistan</div>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center gap-4">
+                                    <div class="w-10 h-10 rounded-xl bg-violet-500/10 text-violet-400 border border-violet-500/30 flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs text-slate-400">Research & Academic Inquiries</div>
+                                        <div class="text-cyan-400 font-mono text-xs font-semibold cursor-pointer" onclick="navigator.clipboard.writeText('faria.biomedical@superior.edu.pk'); showToast('Email copied to clipboard!');">
+                                            faria.biomedical@superior.edu.pk <i class="fas fa-copy ml-1"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Institutional Links -->
+                        <div class="glass-panel rounded-3xl p-6">
+                            <h4 class="text-xs font-mono font-semibold text-slate-400 uppercase tracking-wider mb-4">Affiliated Institutions</h4>
+                            <div class="space-y-3">
+                                <a href="https://www.superior.edu.pk/" target="_blank" class="flex justify-between items-center p-3 rounded-xl bg-white/[0.02] hover:bg-white/[0.05] border border-white/5 text-xs text-slate-200 transition-all">
+                                    <span class="font-semibold"><i class="fas fa-university text-cyan-400 mr-2"></i> Superior University Lahore</span>
+                                    <i class="fas fa-external-link-alt text-slate-500"></i>
+                                </a>
+                                <a href="https://riphah.edu.pk/lahore" target="_blank" class="flex justify-between items-center p-3 rounded-xl bg-white/[0.02] hover:bg-white/[0.05] border border-white/5 text-xs text-slate-200 transition-all">
+                                    <span class="font-semibold"><i class="fas fa-university text-emerald-400 mr-2"></i> Riphah International University</span>
+                                    <i class="fas fa-external-link-alt text-slate-500"></i>
+                                </a>
+                                <a href="https://www.uet.edu.pk" target="_blank" class="flex justify-between items-center p-3 rounded-xl bg-white/[0.02] hover:bg-white/[0.05] border border-white/5 text-xs text-slate-200 transition-all">
+                                    <span class="font-semibold"><i class="fas fa-university text-violet-400 mr-2"></i> UET Lahore</span>
+                                    <i class="fas fa-external-link-alt text-slate-500"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="lg:col-span-7 glass-panel rounded-3xl p-8">
+                        <h3 class="text-2xl font-bold text-white mb-2">Send a Message</h3>
+                        <p class="text-slate-400 text-xs mb-6">Interested in research collaboration, project supervision, or academic inquiries? Leave a message below.</p>
+
+                        <form id="contact-form" class="space-y-4">
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-mono text-slate-300 mb-1">Your Full Name</label>
+                                    <input type="text" required placeholder="Dr. John Doe" class="w-full px-4 py-2.5 rounded-xl bg-navy-950 border border-white/10 text-xs font-mono text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-mono text-slate-300 mb-1">Your Email Address</label>
+                                    <input type="email" required placeholder="john@institution.edu" class="w-full px-4 py-2.5 rounded-xl bg-navy-950 border border-white/10 text-xs font-mono text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-mono text-slate-300 mb-1">Subject</label>
+                                <input type="text" required placeholder="Research Collaboration / Thesis Supervision" class="w-full px-4 py-2.5 rounded-xl bg-navy-950 border border-white/10 text-xs font-mono text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-mono text-slate-300 mb-1">Message</label>
+                                <textarea rows="4" required placeholder="Write your message details..." class="w-full px-4 py-2.5 rounded-xl bg-navy-950 border border-white/10 text-xs font-mono text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 text-navy-950 font-bold text-xs uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:scale-[1.01]">
+                                Send Message <i class="fas fa-paper-plane ml-2"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 px-4 border-t border-white/10 text-center text-xs font-mono text-slate-500 relative z-10 bg-navy-950">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div>
+                © 2026 Engr. Faria • Biomedical Engineer & Research Scholar
+            </div>
+            <div class="flex gap-4 text-slate-400">
+                <a href="#home" class="hover:text-cyan-400 transition-colors">Back to Top <i class="fas fa-arrow-up ml-1"></i></a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ================= PROJECT DETAILS MODAL ================= -->
+    <div id="project-modal" class="modal-overlay fixed inset-0 z-50 hidden items-center justify-center p-4">
+        <div class="modal-content w-full max-w-3xl rounded-3xl p-6 md:p-8 overflow-y-auto relative text-slate-200">
+            <button id="modal-close" class="absolute top-6 right-6 w-9 h-9 rounded-full bg-white/10 text-slate-400 hover:text-white flex items-center justify-center transition-colors">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <div class="mb-4">
+                <span id="modal-category" class="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 font-mono text-xs font-bold border border-cyan-500/30">
+                    Category
+                </span>
+                <span id="modal-duration" class="ml-2 text-xs font-mono text-slate-400">Duration</span>
+            </div>
+
+            <h3 id="modal-title" class="text-2xl md:text-3xl font-bold text-white mb-2 leading-snug">Project Title</h3>
+            <div id="modal-role" class="text-sm font-mono text-emerald-400 mb-6">Role</div>
+
+            <div class="space-y-6 text-sm">
+                <div>
+                    <h4 class="text-xs font-mono text-slate-400 uppercase mb-2">Project Overview</h4>
+                    <p id="modal-summary" class="text-slate-300 leading-relaxed bg-navy-950/60 p-4 rounded-2xl border border-white/5"></p>
+                </div>
+
+                <!-- Project Architecture, Schematic & Prototype Image Gallery -->
+                <div id="modal-image-section" class="hidden">
+                    <div class="flex items-center justify-between mb-2">
+                        <h4 class="text-xs font-mono text-cyan-400 uppercase tracking-wider flex items-center gap-2">
+                            <i class="fas fa-microchip"></i> System Architecture, Prototype & Schematic
+                        </h4>
+                        <span class="text-[11px] font-mono text-slate-400 flex items-center gap-1">
+                            <i class="fas fa-search-plus text-cyan-400"></i> Click to enlarge
+                        </span>
+                    </div>
+                    <div id="modal-image-wrapper" class="relative rounded-2xl overflow-hidden border border-white/10 bg-navy-950/90 p-2.5 shadow-inner group cursor-pointer hover:border-cyan-500/40 transition-all">
+                        <img id="modal-image" src="" alt="Project Visual Preview" class="w-full max-h-[380px] object-contain rounded-xl mx-auto group-hover:scale-[1.01] transition-transform">
+                        <div class="absolute bottom-4 right-4 px-3.5 py-1.5 rounded-xl bg-navy-900/90 text-cyan-300 border border-cyan-500/30 text-xs font-mono font-semibold transition-all backdrop-blur-md flex items-center gap-1.5 shadow-lg group-hover:bg-cyan-500/20 group-hover:scale-105">
+                            <i class="fas fa-expand"></i> Full Screen View
+                        </div>
+                    </div>
+                    <p id="modal-image-caption" class="text-xs font-mono text-cyan-400/80 mt-2 text-center italic"></p>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-mono text-slate-400 uppercase mb-2">Clinical Dataset & Hardware</h4>
+                    <p id="modal-dataset" class="text-slate-300 leading-relaxed bg-navy-950/60 p-4 rounded-2xl border border-white/5"></p>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-mono text-slate-400 uppercase mb-2">Key Achievements & Methodology</h4>
+                    <ul id="modal-highlights" class="space-y-2 text-slate-300"></ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-mono text-slate-400 uppercase mb-2">Technologies Used</h4>
+                    <div id="modal-tech" class="flex flex-wrap gap-2"></div>
+                </div>
+
+                <div id="modal-link-container" class="pt-4 border-t border-white/10 hidden"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ================= FULLSCREEN IMAGE LIGHTBOX MODAL ================= -->
+    <div id="lightbox-modal" class="modal-overlay fixed inset-0 z-[70] hidden items-center justify-center p-4">
+        <div class="relative max-w-5xl w-full max-h-[95vh] flex flex-col items-center">
+            <button id="lightbox-close" class="absolute -top-12 right-0 w-10 h-10 rounded-full bg-white/15 hover:bg-white/25 text-white flex items-center justify-center text-lg transition-colors">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="glass-panel p-3 rounded-3xl border border-white/20 shadow-2xl overflow-hidden max-h-[85vh] flex items-center justify-center bg-navy-950/95 w-full">
+                <img id="lightbox-img" src="" alt="Full resolution diagram" class="max-w-full max-h-[78vh] object-contain rounded-2xl">
+            </div>
+            <div id="lightbox-caption" class="mt-3 text-xs md:text-sm font-mono text-cyan-300 text-center px-5 py-2.5 rounded-xl bg-navy-900/95 border border-white/15 max-w-2xl shadow-xl"></div>
+        </div>
+    </div>
+
+
+    <!-- ================= DIGITAL CV FULL MODAL ================= -->
+    <div id="cv-modal" class="modal-overlay fixed inset-0 z-50 hidden items-center justify-center p-4">
+        <div class="modal-content w-full max-w-4xl rounded-3xl p-6 md:p-10 overflow-y-auto relative text-slate-200">
+            <div class="flex justify-between items-center pb-4 mb-6 border-b border-white/10">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-emerald-500 flex items-center justify-center text-navy-950 font-bold font-mono text-lg">
+                        FB
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white">Engr. Faria — Digital Curriculum Vitae</h3>
+                        <div class="text-xs font-mono text-cyan-400">Biomedical Engineer & AI Healthcare Specialist</div>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <button onclick="window.print()" class="px-3.5 py-1.5 rounded-xl bg-cyan-500/20 text-cyan-400 border border-cyan-500/40 text-xs font-mono font-semibold hover:bg-cyan-500/30 transition-all flex items-center gap-1.5">
+                        <i class="fas fa-print"></i> Print CV
+                    </button>
+                    <button id="close-cv-modal" class="w-9 h-9 rounded-full bg-white/10 text-slate-400 hover:text-white flex items-center justify-center transition-colors">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- CV Document Container -->
+            <div class="space-y-8 text-sm leading-relaxed text-slate-300">
+                <!-- Objective -->
+                <div class="bg-navy-950/80 p-5 rounded-2xl border border-white/5">
+                    <h4 class="text-xs font-mono font-bold text-cyan-400 uppercase tracking-widest mb-2">Executive Summary</h4>
+                    <p class="text-slate-200">
+                        Biomedical Engineer with strong expertise in AI-driven healthcare systems, biomedical signal processing and medical imaging seeking to develop clinically relevant, scalable and impactful solutions. Skilled in conducting research using clinical datasets and physiological signals ensuring ethical compliance and scientific rigor.
+                    </p>
+                </div>
+
+                <!-- Education -->
+                <div>
+                    <h4 class="text-xs font-mono font-bold text-emerald-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+                        <i class="fas fa-graduation-cap"></i> Education & Academic Qualifications
+                    </h4>
+                    <div class="space-y-4 border-l-2 border-emerald-500/40 pl-4 ml-2">
+                        <div class="space-y-1.5">
+                            <div class="flex justify-between font-bold text-white">
+                                <span>Master in Biomedical Engineering</span>
+                                <span class="font-mono text-xs text-emerald-400">10/2022 – 03/2025</span>
+                            </div>
+                            <div class="text-xs text-slate-400">Riphah International University, Lahore Campus</div>
+                            <div class="text-xs text-slate-300">Courses: Advance Biomedical Signal Processing, Advance Biomedical Imaging Processing, Machine Learning and Deep Learning & Advance Biomedical Control System.</div>
+                            <div class="flex flex-wrap items-center gap-3 pt-1 text-[11px] font-mono">
+                                <span class="text-emerald-400"><i class="fas fa-check-circle"></i> HEC Attestation: Ref. HEC/A&amp;A/DAS/2026/5129954</span>
+                                <button onclick="openCertificateLightbox('certificates/Master Degree and certificate/Master_Degree_and_HEC_Attestation_page_4.png', 'Master of Science in Biomedical Engineering Degree Certificate — Attested by Higher Education Commission (HEC) of Pakistan', 'certificates/Master Degree and certificate/Master_Degree_and_HEC_Attestation.pdf')" class="text-cyan-400 hover:text-cyan-300 underline cursor-pointer inline-flex items-center gap-1">
+                                    <i class="fas fa-certificate"></i> View Degree Certificate
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <div class="flex justify-between font-bold text-white">
+                                <span>Bachelors in Biomedical Engineering</span>
+                                <span class="font-mono text-xs text-emerald-400">09/2017 – 05/2021</span>
+                            </div>
+                            <div class="text-xs text-slate-400">University of Engineering and Technology (UET), Lahore Campus</div>
+                            <div class="text-xs text-slate-300">Courses: Biomedical Imaging, Modelling of Physiological Processes, Biomedical Instrumentation, Neuroscience and Neural Network, Cell and Molecular Biology.</div>
+                            <div class="flex flex-wrap items-center gap-3 pt-1 text-[11px] font-mono">
+                                <span class="text-amber-400"><i class="fas fa-trophy"></i> UTM Poster Award 2nd Position</span>
+                                <button onclick="openCertificateLightbox('certificates/2nd Position International Poster Award/Healthcare Technologies Certificate.png', '2nd Position International Poster Award in Healthcare Technologies — Universiti Teknologi Malaysia (UTM)', 'certificates/2nd Position International Poster Award/Healthcare Technologies Certificate.pdf')" class="text-amber-400 hover:text-amber-300 underline cursor-pointer inline-flex items-center gap-1">
+                                    <i class="fas fa-award"></i> View Award Certificate
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience -->
+                <div>
+                    <h4 class="text-xs font-mono font-bold text-cyan-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+                        <i class="fas fa-briefcase"></i> Professional Experience
+                    </h4>
+                    <div class="space-y-4 border-l-2 border-cyan-500/40 pl-4 ml-2">
+                        <div>
+                            <div class="flex justify-between font-bold text-white">
+                                <span>Lecturer</span>
+                                <span class="font-mono text-xs text-cyan-400">10/2024 – Present</span>
+                            </div>
+                            <div class="text-xs text-slate-400">Superior University, Lahore Campus</div>
+                            <div class="text-xs text-slate-300 mt-1">Delivered outcome-based lectures integrating emerging biomedical technologies. Supervised research projects in mechatronic telesurgery, environmental radiation monitoring, and EEG BCI.</div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between font-bold text-white">
+                                <span>Lab Engineer</span>
+                                <span class="font-mono text-xs text-cyan-400">10/2022 – 09/2024</span>
+                            </div>
+                            <div class="text-xs text-slate-400">Riphah International University, Lahore Campus</div>
+                            <div class="text-xs text-slate-300 mt-1">Conducted project-based laboratory instruction on medical equipment and signal analysis. Organized semester exhibitions and hospital visits.</div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between font-bold text-white">
+                                <span>Biomedical Engineer</span>
+                                <span class="font-mono text-xs text-cyan-400">09/2021 – 12/2021</span>
+                            </div>
+                            <div class="text-xs text-slate-400">Human Health Care</div>
+                            <div class="text-xs text-slate-300 mt-1">Coordinated technical documentation, procurement, and regulatory compliance.</div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between font-bold text-white">
+                                <span>Biomedical Internee</span>
+                                <span class="font-mono text-xs text-cyan-400">06/2019 – 07/2019</span>
+                            </div>
+                            <div class="text-xs text-slate-400">Combined Military Hospital (CMH)</div>
+                            <div class="text-xs text-slate-300 mt-1">Hands-on experience with diagnostic laboratory and biomedical instrumentation.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projects Summary -->
+                <div>
+                    <h4 class="text-xs font-mono font-bold text-violet-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+                        <i class="fas fa-folder-open"></i> Key Supervised & Degree Research Projects
+                    </h4>
+                    <div class="grid sm:grid-cols-2 gap-3 text-xs">
+                        <div class="p-3 bg-navy-950/60 rounded-xl border border-white/5">
+                            <strong class="text-white block mb-1">AI Cardiovascular Detection (MIMIC-III)</strong>
+                            <p class="text-slate-400">Non-invasive PPG continuous blood glucose estimation with MIT CITI ethics access credential.</p>
+                        </div>
+                        <div class="p-3 bg-navy-950/60 rounded-xl border border-white/5">
+                            <strong class="text-white block mb-1">Smart Health Framework (ECG)</strong>
+                            <p class="text-slate-400">PhysioNet ECG digitized MATLAB/Arduino classifier. Won 2nd Position UTM Poster Award & Ignite Grant shortlisted.</p>
+                        </div>
+                        <div class="p-3 bg-navy-950/60 rounded-xl border border-white/5">
+                            <strong class="text-white block mb-1">Closed-Loop EEG BCI Exoskeleton</strong>
+                            <p class="text-slate-400">ADS1299 EEG AFE with ESP32 real-time micro-AI motor rehabilitation control.</p>
+                        </div>
+                        <div class="p-3 bg-navy-950/60 rounded-xl border border-white/5">
+                            <strong class="text-white block mb-1">Brain Tumor Detection & COMSOL Bioheat</strong>
+                            <p class="text-slate-400">CNN MRI diagnosis (82.57% accuracy) combined with thermal ablation bioheat transfer simulation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publications & Scholarly Research -->
+                <div>
+                    <h4 class="text-xs font-mono font-bold text-cyan-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+                        <i class="fas fa-book-open"></i> Publications & Peer-Reviewed Scholarly Research
+                    </h4>
+                    <div class="space-y-4 border-l-2 border-cyan-500/40 pl-4 ml-2">
+                        <div class="bg-navy-950/70 p-4 rounded-xl border border-white/5">
+                            <div class="flex flex-wrap justify-between items-start gap-2 mb-1.5">
+                                <span class="font-bold text-white text-sm">A Diagnosis-Independent Severity Phenotype in Cardiovascular Admissions Using Unsupervised Machine Learning and Survival Analysis</span>
+                                <span class="px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-400 font-mono text-[10px] font-bold">First & Co-Corresponding Author</span>
+                            </div>
+                            <div class="text-xs text-slate-300 font-mono mb-2">
+                                <strong class="text-cyan-400">Faria Javed<sup>1*</sup></strong>, Fatime Taj<sup>2</sup>, Adnan Yousaf<sup>3</sup>, Sara Aslam<sup>1*</sup>
+                            </div>
+                            <p class="text-xs text-slate-400 leading-relaxed mb-2">
+                                Unsupervised machine learning clustering coupled with Kaplan-Meier and Cox proportional hazards survival modeling on cardiovascular admissions data to establish diagnosis-independent severity stratification for ICU triage.
+                            </p>
+                            <div class="text-[11px] text-slate-500 font-mono pt-2 border-t border-white/5">
+                                <sup>1</sup> Dept. of Biomedical Engineering, Superior University Lahore • <sup>*</sup> Corresponding Author
+                            </div>
+                        </div>
+
+                        <div class="bg-navy-950/70 p-4 rounded-xl border border-white/5">
+                            <div class="flex flex-wrap justify-between items-start gap-2 mb-1.5">
+                                <span class="font-bold text-white text-sm">Polygenic Risk Score Matches Machine-Learning Discrimination Without Overfitting in Predicting Chemotherapy-Induced Hepatotoxicity in Pediatrics Acute Lymphoblastic Leukemia</span>
+                                <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-mono text-[10px] font-bold">Co-Author</span>
+                            </div>
+                            <div class="text-xs text-slate-300 font-mono mb-2">
+                                Sara Aslam<sup>1*</sup>, Sumbal Sarwar<sup>2</sup>, Adnan Yousaf<sup>3</sup>, <strong class="text-emerald-400">Faria Javed<sup>1</sup></strong>, Shabana<sup>4*</sup>
+                            </div>
+                            <p class="text-xs text-slate-400 leading-relaxed mb-2">
+                                Benchmarking Polygenic Risk Score (PRS) discrimination performance against non-linear supervised machine learning algorithms in pediatric ALL chemotherapy hepatotoxicity, avoiding high-dimensional genomic overfitting.
+                            </p>
+                            <div class="text-[11px] text-slate-500 font-mono pt-2 border-t border-white/5">
+                                <sup>1</sup> Dept. of Biomedical Engineering, Superior University Lahore • <sup>*</sup> Corresponding Author
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Verified Honors, Certifications & Credentials -->
+                <div>
+                    <h4 class="text-xs font-mono font-bold text-amber-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+                        <i class="fas fa-certificate"></i> Verified Certifications, Honors & Awards
+                    </h4>
+                    <div class="grid sm:grid-cols-2 gap-3 text-xs">
+                        <div class="p-3 bg-navy-950/70 rounded-xl border border-white/5 flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-start mb-1">
+                                    <strong class="text-white">HEC-Attested Master Degree</strong>
+                                    <span class="text-[10px] font-mono text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-500/30">Verified</span>
+                                </div>
+                                <p class="text-slate-400 text-[11px] mb-2">Higher Education Commission Islamabad Attestation Ref: HEC/A&amp;A/DAS/2026/5129954.</p>
+                            </div>
+                            <div class="flex items-center gap-3 pt-2 border-t border-white/5 font-mono text-[11px]">
+                                <button onclick="openCertificateLightbox('certificates/Master Degree and certificate/Master_Degree_and_HEC_Attestation_page_4.png', 'Master of Science in Biomedical Engineering Degree Certificate — Attested by Higher Education Commission (HEC) of Pakistan', 'certificates/Master Degree and certificate/Master_Degree_and_HEC_Attestation.pdf')" class="text-cyan-400 hover:underline inline-flex items-center gap-1 cursor-pointer">
+                                    <i class="fas fa-image"></i> View Scan
+                                </button>
+                                <a href="certificates/Master Degree and certificate/Master_Degree_and_HEC_Attestation.pdf" target="_blank" class="text-slate-400 hover:text-white inline-flex items-center gap-1">
+                                    <i class="fas fa-file-pdf text-rose-400"></i> PDF
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="p-3 bg-navy-950/70 rounded-xl border border-white/5 flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-start mb-1">
+                                    <strong class="text-white">CITI Human Research Ethics</strong>
+                                    <span class="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/30">MIT Credential</span>
+                                </div>
+                                <p class="text-slate-400 text-[11px] mb-2">Data/Specimens Only Research (Record ID: 60527282) authorized for MIMIC-III database access.</p>
+                            </div>
+                            <div class="flex items-center gap-3 pt-2 border-t border-white/5 font-mono text-[11px]">
+                                <button onclick="openCertificateLightbox('certificates/Citi completeion certificate/citiCompletionCertificate_12942627_60527282.png', 'CITI Program Human Research Ethics Credential — Massachusetts Institute of Technology (MIT) Affiliates', 'certificates/Citi completeion certificate/citiCompletionCertificate_12942627_60527282.pdf')" class="text-emerald-400 hover:underline inline-flex items-center gap-1 cursor-pointer">
+                                    <i class="fas fa-image"></i> View Certificate
+                                </button>
+                                <a href="certificates/Citi completeion certificate/citiCompletionCertificate_12942627_60527282.pdf" target="_blank" class="text-slate-400 hover:text-white inline-flex items-center gap-1">
+                                    <i class="fas fa-file-pdf text-rose-400"></i> PDF
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="p-3 bg-navy-950/70 rounded-xl border border-white/5 flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-start mb-1">
+                                    <strong class="text-white">2nd Position Poster Award (UTM)</strong>
+                                    <span class="text-[10px] font-mono text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/30">2nd Position</span>
+                                </div>
+                                <p class="text-slate-400 text-[11px] mb-2">iCBME &amp; iMEDiTEC Conference, Universiti Teknologi Malaysia in Healthcare Technologies.</p>
+                            </div>
+                            <div class="flex items-center gap-3 pt-2 border-t border-white/5 font-mono text-[11px]">
+                                <button onclick="openCertificateLightbox('certificates/2nd Position International Poster Award/Healthcare Technologies Certificate.png', '2nd Position International Poster Award in Healthcare Technologies — Universiti Teknologi Malaysia (UTM)', 'certificates/2nd Position International Poster Award/Healthcare Technologies Certificate.pdf')" class="text-amber-400 hover:underline inline-flex items-center gap-1 cursor-pointer">
+                                    <i class="fas fa-image"></i> View Certificate
+                                </button>
+                                <a href="certificates/2nd Position International Poster Award/Healthcare Technologies Certificate.pdf" target="_blank" class="text-slate-400 hover:text-white inline-flex items-center gap-1">
+                                    <i class="fas fa-file-pdf text-rose-400"></i> PDF
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="p-3 bg-navy-950/70 rounded-xl border border-white/5 flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-start mb-1">
+                                    <strong class="text-white">IELTS Official Academic Result</strong>
+                                    <span class="text-[10px] font-mono text-violet-400 bg-violet-500/10 px-2 py-0.5 rounded border border-violet-500/30">Band 6.5 (C1/B2)</span>
+                                </div>
+                                <p class="text-slate-400 text-[11px] mb-2">TRF: 26PK507307JAVF011A (Listening: 7.5, Reading: 6.5, Speaking: 6.5, Writing: 5.5).</p>
+                            </div>
+                            <div class="flex items-center gap-3 pt-2 border-t border-white/5 font-mono text-[11px]">
+                                <button onclick="openCertificateLightbox('certificates/Ielts score/IELTS Official Test Result.png', 'IELTS Official Academic Test Report Form — Overall Band 6.5 (CEFR B2/C1 Level)', 'certificates/Ielts score/IELTS Official Test Result.pdf')" class="text-violet-400 hover:underline inline-flex items-center gap-1 cursor-pointer">
+                                    <i class="fas fa-image"></i> View TRF Form
+                                </button>
+                                <a href="certificates/Ielts score/IELTS Official Test Result.pdf" target="_blank" class="text-slate-400 hover:text-white inline-flex items-center gap-1">
+                                    <i class="fas fa-file-pdf text-rose-400"></i> PDF
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="p-3 bg-navy-950/70 rounded-xl border border-white/5 flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-start mb-1">
+                                    <strong class="text-white">Ignite National ICT Grant Shortlist</strong>
+                                    <span class="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/30">National Grant</span>
+                                </div>
+                                <p class="text-slate-400 text-[11px] mb-2">Shortlisted for national innovation funding by National Grassroots ICT Research Initiative (NGIRI).</p>
+                            </div>
+                            <div class="flex items-center gap-3 pt-2 border-t border-white/5 font-mono text-[11px]">
+                                <button onclick="openCertificateLightbox('certificates/Nigri funding/FYP Final term Presentation (1)-pages-6-pages-5.png', 'National Grassroots ICT Research Initiative (NGIRI) Funding Presentation Verification — Ignite National Technology Fund', 'certificates/Nigri funding/FYP Final term Presentation (1)-pages-6-pages-5.pdf')" class="text-emerald-400 hover:underline inline-flex items-center gap-1 cursor-pointer">
+                                    <i class="fas fa-image"></i> View Slide
+                                </button>
+                                <a href="certificates/Nigri funding/FYP Final term Presentation (1)-pages-6-pages-5.pdf" target="_blank" class="text-slate-400 hover:text-white inline-flex items-center gap-1">
+                                    <i class="fas fa-file-pdf text-rose-400"></i> PDF
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="p-3 bg-navy-950/70 rounded-xl border border-white/5 flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-start mb-1">
+                                    <strong class="text-white">YPEG Expert Jury Evaluator</strong>
+                                    <span class="text-[10px] font-mono text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-500/30">Jury Honor</span>
+                                </div>
+                                <p class="text-slate-400 text-[11px] mb-2">Young Professional Excellence Group evaluation recognition for technical projects.</p>
+                            </div>
+                            <div class="flex items-center gap-3 pt-2 border-t border-white/5 font-mono text-[11px]">
+                                <a href="https://www.linkedin.com/posts/ypeg-pakistan_youngengineers-ypeg-youthempowerment-activity-7221756471242276864-MZoL" target="_blank" class="text-cyan-400 hover:underline inline-flex items-center gap-1">
+                                    <i class="fab fa-linkedin"></i> LinkedIn Post <i class="fas fa-external-link-alt text-[9px]"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical Skills & Languages -->
+                <div class="grid sm:grid-cols-2 gap-6 pt-4 border-t border-white/10">
+                    <div>
+                        <h4 class="text-xs font-mono font-bold text-slate-400 uppercase mb-2">Technical Skills & Software</h4>
+                        <p class="text-xs text-slate-300">
+                            MATLAB, Python, COMSOL Multiphysics, Arduino, Proteus, Multisim, Dev C++, LabVIEW, ADS1299 EEG AFE, Microsoft Office.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-mono font-bold text-slate-400 uppercase mb-2">Languages</h4>
+                        <div class="text-xs text-slate-300 space-y-1">
+                            <div>• <strong class="text-white">Urdu</strong>: Native Proficiency</div>
+                            <div class="flex flex-wrap items-center gap-1.5">
+                                <span>• <strong class="text-white">English</strong>: Fluent (IELTS Academic Overall Band 6.5 [C1/B2], TRF: 26PK507307JAVF011A)</span>
+                                <button onclick="openCertificateLightbox('certificates/Ielts score/IELTS Official Test Result.png', 'IELTS Official Academic Test Report Form — Overall Band 6.5 (CEFR B2/C1 Level)', 'certificates/Ielts score/IELTS Official Test Result.pdf')" class="text-cyan-400 hover:underline inline-flex items-center gap-0.5 font-mono text-[11px] cursor-pointer">
+                                    [<i class="fas fa-certificate text-[10px]"></i> View TRF]
+                                </button>
+                            </div>
+                            <div>• <strong class="text-white">Chinese</strong>: Elementary Proficiency</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ================= CITATION DETAILS MODAL ================= -->
+    <div id="citation-modal" class="modal-overlay fixed inset-0 z-50 hidden items-center justify-center p-4">
+        <div class="modal-content w-full max-w-2xl rounded-3xl p-6 md:p-8 overflow-y-auto relative text-slate-200">
+            <button id="citation-modal-close" class="absolute top-6 right-6 w-9 h-9 rounded-full bg-white/10 text-slate-400 hover:text-white flex items-center justify-center transition-colors">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <div class="flex items-center gap-2 mb-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse"></span>
+                <span class="text-xs font-mono font-semibold text-cyan-400 uppercase tracking-wider">Citation & Formats</span>
+            </div>
+
+            <h3 id="citation-modal-title" class="text-lg md:text-xl font-bold text-white mb-4 leading-snug">Paper Title</h3>
+
+            <!-- Tabs: APA, IEEE, BibTeX -->
+            <div class="flex gap-2 mb-4 border-b border-white/10 pb-3">
+                <button class="citation-tab-btn active px-3.5 py-1.5 rounded-lg text-xs font-mono font-semibold bg-cyan-500/20 text-cyan-400 border border-cyan-500/40" data-format="bibtex">BibTeX</button>
+                <button class="citation-tab-btn px-3.5 py-1.5 rounded-lg text-xs font-mono font-semibold bg-white/5 text-slate-400 hover:text-white border border-white/10" data-format="apa">APA Style</button>
+                <button class="citation-tab-btn px-3.5 py-1.5 rounded-lg text-xs font-mono font-semibold bg-white/5 text-slate-400 hover:text-white border border-white/10" data-format="ieee">IEEE Style</button>
+            </div>
+
+            <div class="relative bg-navy-950 p-4 rounded-2xl border border-white/10 font-mono text-xs text-slate-300 leading-relaxed mb-5 overflow-x-auto">
+                <pre id="citation-text" class="whitespace-pre-wrap break-all"></pre>
+            </div>
+
+            <div class="flex flex-wrap justify-between items-center gap-3">
+                <span class="text-[11px] text-slate-400 font-mono">Format ready for reference managers</span>
+                <button id="copy-citation-modal-btn" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 text-navy-950 font-bold text-xs font-mono hover:scale-105 transition-all flex items-center gap-2">
+                    <i class="fas fa-copy"></i> Copy to Clipboard
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Scripts -->
+    <script src="js/particles.js"></script>
+    <script src="js/biosignal-sim.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

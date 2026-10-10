@@ -1,0 +1,100 @@
+Biomedical Engineer with strong expertise in AI-driven healthcare systems, biomedical signal processing and medical imaging seeking to develop clinically relevant, scalable and impactful solutions.
+Skilled in conducting research using clinical datasets and physiological signals ensuring ethical compliance and scientific rigor.
+EDUCATION AND TRAINING
+Master in Biomedical Engineering
+Riphah International University, Lahore Campus [ 10/ 2022 – 03 2025]
+Courses: Advance Biomedical Signal Processing, Advance Biomedical Imaging Processing, Machine Learning and Deep Learning & Advance Biomedical Control System
+HEC Attestation: Reference No. HEC/A&A/DAS/2026/5129954 (Higher Education Commission, Islamabad)
+Website: https://riphah.edu.pk/lahore
+Bachelors in Biomedical Engineering
+University of Engineering and Technology, Lahore Campus [ 09/ 2017 – 05/ 2021]
+Courses: Biomedical Imaging, Modelling of Physiological Processes, Biomedical Instrumentation, Neuroscience and Neural Network, Biomedical Instrumentation, Cell and Molecular Biology Website: https://www.uet.edu.pk
+WORK EXPERIENCE
+As Lecturer
+Superior University, Lahore Campus [ 10/2024 –Present]
+Delivered outcome-based lectures integrating emerging biomedical technologies.
+Achievements
+Supervised final-year research projects such as Centralized Radiation and Environmental Hazard Monitoring Device and Design & Development of Embedded Mechatronic System for Robotic Tele-Surgery.
+As Lab Engineer
+Riphah International University, Lahore Campus [ 10/2022 – 09/2024]
+Conducted project-based laboratory instruction on medical equipment and signal analysis.
+Achievements
+Organized semester project exhibitions and hospital visits.
+AS biomedical Engineer
+Human Health care [ 09/2021 – 12/2021]
+Coordinated technical documentation, procurement, and regulatory compliance.
+As Internee
+Combined Military Hospital [06/2019-07/2019]
+Hands-on experience with diagnostic laboratory and biomedical instrumentation.
+PROJECTS
+Master’s Final Project (02/ 2024- 03/ 2025)
+Empowering Health Care in Pakistan: AI-Enabled Cardiovascular Disease Detection and Monitoring System
+Project’s Description
+The system uses own designed dataset by extracting the required parameters like glucose value or hba1c values which are deciding factor for diabetes from MIMIC III clinical credentialed based access database for AI-enabled classification to identify individuals with diabetes at high risk for cardiovascular disease, leveraging continuous non-invasive blood glucose estimation through photoplethysmography (PPG).
+Achievement
+• Worked with MIMIC III dataset that is not public and get access through completing the CITI program under the requirements set by Massachusetts Institute of Technology Affiliates.
+www.citiprogram.org/verify/?kbce18feb-7eb8-47c8-92b0-82a21d792edd-6052728
+Bachelor’s Final Year Project (Fall 2020-Spring 2021)
+A Cost Effective and Smart Framework for health monitoring
+Project’s Description
+Developed a classification system for the diseased particularly Cardiovascular patients by applying machine learning algorithm and for this the dataset chosen was made by combining the diseased database taking from physionet and collected healthy volunteer ECG data which was first digitized by Arduino then interface with MATLAB for signal processing and conditioning and finally at the end build a website for remote data monitoring.
+Achievements
+Won 2nd position in undergraduate poster competition on healthcare Technologies category in international conference on biosciences and medical engineering (iCBME) and international medical devices and technology conference (iMEDiTEC) conducted by Universiti Teknologi Malysia (UTM) on 29th-30th June 2021.
+https://www.utm.my
+Final year project shortlisted for funding by National Grassroots ICT Research Initiative program for 2020-2021 shortlisted FYPs.
+https://ignite.org.pk/national-grassroots-research-initiative
+Supervised Projects
+•A Closed Loop EEG-Driven BCI for Exoskeleton Arm Control and Motor Rehabilitation Applications (02/ 2026-present)
+Project’s Description
+This project focuses on designing a non-invasive EEG-based brain–computer interface using ADS1299 and AI-driven decoding algorithms, integrated with an ESP32 platform to enable real-time and closed loop feedback system for continuous rehabilitation assistance.
+• Design and Development of an AI-Assisted Brain Tumor Detection and Thermal Ablation Simulation Framework (01/ 2026present)
+Project’s Description
+This project presents an AI-driven medical imaging and simulation framework that integrates convolutional neural network–based brain tumor detection, robust MRI preprocessing and data augmentation, automated tumor localization and physics-based thermal ablation modeling by using COMSOL Software enabling accurate tumor classification (82.57% accuracy) and AI-guided bioheat simulation for non-invasive treatment analysis in a cost-effective and fully simulated environment.
+•Centralized Radiation and Environmental Hazard Monitoring Device (01/2025- 12/ 2025)
+Project’s Description
+This project introduces a cost-effective, centralized radiation and environmental monitoring system that replaces conventional Geiger–Muller tubes with a BPW34 PIN photodiode and integrates real-time sensing, cloud connectivity, regulatory compliance, and automated alerts into a single smart platform.
+•Design & Development of Embedded Mechatronic System for Robotic Tele-Surgery (01/2025- 12/2025)
+Project’s Description
+This project presents a low-cost, AI-enabled embedded telesurgery system that integrates modular master–slave robotic teleoperation, sub-200 ms wireless control and real-time computer vision for object detection and guidance achieving reliable surgical simulation at a cost under USD 500 making advanced telesurgery training accessible for low- and middle-income settings.
+•Smart Biopolymer (Alginate Hydrogel) for Controlled Drug Release (2024–2025)
+Project’s Description
+This project focuses on developing and characterizing a temperature-responsive alginate hydrogel, demonstrating body-temperature-triggered (37°C) accelerated drug release versus slow release at 25°C. This hands-on experience directly aligns with major focus on bio-material synthesis, release kinetics and tissue engineering applications.
+•     Musculoskeletal Biomechanics & Rehabilitation Device Semester Projects (2024–2025)
+Project’s Description
+Supervised a suite of biomechanics-focused semester projects spanning orthopedic and neuromuscular device development:
+Smart Knee Brace — sensor-integrated wearable for real-time joint load and angle monitoring
+Muscle Fatigue Monitoring System — EMG-based fatigue detection for athletic and clinical use
+Mayo Voice Flex Arm — voice-controlled prosthetic arm mechanism
+PUBLICATIONS & RESEARCH PAPERS
+1. A Diagnosis-Independent Severity Phenotype in Cardiovascular Admissions Using Unsupervised Machine Learning and Survival Analysis
+Authors: Faria Javed1*, Fatime Taj2, Adnan Yousaf3, Sara Aslam1*
+(1: Dept. of Biomedical Engineering, Superior University Lahore; *: Corresponding Author)
+Role: First Author & Co-Corresponding Author
+Description: Unsupervised clustering and time-to-event survival analysis (Kaplan-Meier, Cox PH) for clinical severity phenotyping in acute cardiovascular admissions.
+
+2. Polygenic Risk Score Matches Machine-Learning Discrimination Without Overfitting in Predicting Chemotherapy-Induced Hepatotoxicity in Pediatrics Acute Lymphoblastic Leukemia
+Authors: Sara Aslam1*, Sumbal Sarwar2, Adnan Yousaf3, Faria Javed1, Shabana4*
+(1: Dept. of Biomedical Engineering, Superior University Lahore; *: Corresponding Author)
+Role: Co-Author & Biomedical Data/AI Specialist
+Description: Evaluated genome-wide Polygenic Risk Scores (PRS) against machine learning discrimination metrics (AUROC/AUPRC) while mitigating overfitting in pediatric ALL chemotherapy-induced liver injury.
+
+ACHIEVEMENTS/CERTIFICATES
+• Higher Education Commission (HEC) Attestation: Master of Science in Biomedical Engineering Degree & Transcript (Ref: HEC/A&A/DAS/2026/5129954).
+• CITI Program Research Ethics Certification: Human Subjects Research / Data or Specimens Only Research (MIT Affiliates, Record ID: 60527282) credentialed for MIMIC-III database access.
+• 2nd Position International Poster Award in Healthcare Technologies category: iCBME & iMEDiTEC Conference, Universiti Teknologi Malaysia (UTM) (29th-30th June 2021).
+• IELTS Official Academic Test Result: Overall Band 6.5 (Listening: 7.5, Reading: 6.5, Speaking: 6.5, Writing: 5.5, CEFR B2/C1 Level; TRF: 26PK507307JAVF011A).
+• National Grassroots ICT Research Initiative (NGIRI) Grant: Final Year Project shortlisted for national innovation funding by Ignite National Technology Fund (2020-2021).
+• Awarded Best Coach at the Inter-University Sports Matches in recognition of outstanding coaching performance and team development.
+• Honored as Best Carrom Player at the Inter-University Faculty Sports Meet for exceptional competitive performance. https://www.superior.edu.pk/
+• Certificate for impeccable performance as a jury member for evaluation awarded by YPEG (Young Professional Excellence Group) https://www.linkedin.com/posts/ypeg-pakistan_youngengineers-ypeg-youthempowerment-activity-7221756471242276864-MZoL
+• Certificate for the good performance as team member of American society of mechanical engineering (ASME) society of UET https://www.facebook.com/ASME.UET/?_rdc=2&_rdr#
+SKILLLS
+MICROSOFT OFFICE, GOOD COMMUNICATION SKILLS, MATLAB
+ARDUINO, PYTHON, PROTEUS
+MULTISIM, COMSOL Multiphysics, DEV C++
+LabVIEW, ADS1299 EEG AFE
+LANGUAGE SKILLS
+Mother tongue(s): Urdu (Native)
+Other language(s): 
+• English: Fluent (IELTS Academic Overall Band 6.5 [C1/B2 Level], TRF Number: 26PK507307JAVF011A)
+• Chinese: Elementary
